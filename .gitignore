@@ -1,0 +1,65 @@
+# ==========================
+# Cocos2d-x Project
+# ==========================
+
+# Build artifacts
+*.obj
+*.pdb
+*.idb
+*.exp
+*.lib
+*.dll
+*.exe
+*.ilk
+*.log
+*.aps
+*.sdf
+*.opensdf
+*.tlog
+*.ipch
+
+# Visual Studio folders
+.vs/
+*.VC.db
+*.VC.VC.opendb
+
+# Build output directories
+Debug*/
+Release*/
+Build/
+build/
+bin/
+obj/
+out/
+
+# Intermediate CMake files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# System-specific
+Thumbs.db
+.DS_Store
+
+# Python bytecode (from cocos console)
+*.pyc
+__pycache__/
+
+# Android (if applicable)
+proj.android-studio/.idea/
+proj.android-studio/local.properties
+proj.android-studio/.gradle/
+proj.android-studio/build/
+
+# iOS / Mac
+proj.ios_mac/build/
+
+# User-specific Visual Studio files
+*.user
+*.suo
+
+# Backup / temp files
+*~
+*.tmp
+
