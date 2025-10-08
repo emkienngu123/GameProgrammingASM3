@@ -63,3 +63,6 @@ proj.ios_mac/build/
 *~
 *.tmp
 
+cocos2d/
+
+    
