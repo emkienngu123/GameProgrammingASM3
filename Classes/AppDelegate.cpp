@@ -1,18 +1,18 @@
 /****************************************************************************
  Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
- 
+
  http://www.cocos2d-x.org
- 
+
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
  in the Software without restriction, including without limitation the rights
  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  copies of the Software, and to permit persons to whom the Software is
  furnished to do so, subject to the following conditions:
- 
+
  The above copyright notice and this permission notice shall be included in
  all copies or substantial portions of the Software.
- 
+
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -24,9 +24,9 @@
 
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
-
-// #define USE_AUDIO_ENGINE 1
-// #define USE_SIMPLE_AUDIO_ENGINE 1
+#include "Scene/StartScene.h"
+ // #define USE_AUDIO_ENGINE 1
+ // #define USE_SIMPLE_AUDIO_ENGINE 1
 
 #if USE_AUDIO_ENGINE && USE_SIMPLE_AUDIO_ENGINE
 #error "Don't use AudioEngine and SimpleAudioEngine at the same time. Please just select one in your game!"
@@ -51,7 +51,7 @@ AppDelegate::AppDelegate()
 {
 }
 
-AppDelegate::~AppDelegate() 
+AppDelegate::~AppDelegate()
 {
 #if USE_AUDIO_ENGINE
     AudioEngine::end();
@@ -65,7 +65,7 @@ AppDelegate::~AppDelegate()
 void AppDelegate::initGLContextAttrs()
 {
     // set OpenGL context attributes: red,green,blue,alpha,depth,stencil,multisamplesCount
-    GLContextAttrs glContextAttrs = {8, 8, 8, 8, 24, 8, 0};
+    GLContextAttrs glContextAttrs = { 8, 8, 8, 8, 24, 8, 0 };
 
     GLView::setGLContextAttrs(glContextAttrs);
 }
@@ -78,14 +78,17 @@ static int register_all_packages()
 }
 
 bool AppDelegate::applicationDidFinishLaunching() {
+
+    Director::getInstance()->setProjection(cocos2d::Director::Projection::_2D);
+    Director::getInstance()->setDepthTest(true);
     // initialize director
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
-    if(!glview) {
+    if (!glview) {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
-        glview = GLViewImpl::createWithRect("GameProgrammingASM3", cocos2d::Rect(0, 0, designResolutionSize.width, designResolutionSize.height));
+        glview = GLViewImpl::createWithRect("Test", cocos2d::Rect(0, 0, designResolutionSize.width * 2, designResolutionSize.height * 2));
 #else
-        glview = GLViewImpl::create("GameProgrammingASM3");
+        glview = GLViewImpl::create("Test");
 #endif
         director->setOpenGLView(glview);
     }
@@ -97,29 +100,34 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0f / 60);
 
     // Set the design resolution
-    glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::NO_BORDER);
+    glview->setDesignResolutionSize(designResolutionSize.width * 2, designResolutionSize.height * 2, ResolutionPolicy::NO_BORDER);
     auto frameSize = glview->getFrameSize();
     // if the frame's height is larger than the height of medium size.
     if (frameSize.height > mediumResolutionSize.height)
-    {        
-        director->setContentScaleFactor(MIN(largeResolutionSize.height/designResolutionSize.height, largeResolutionSize.width/designResolutionSize.width));
+    {
+        director->setContentScaleFactor(MIN(largeResolutionSize.height / designResolutionSize.height / 2.0915, largeResolutionSize.width / designResolutionSize.width / 2.0915));
     }
     // if the frame's height is larger than the height of small size.
     else if (frameSize.height > smallResolutionSize.height)
-    {        
-        director->setContentScaleFactor(MIN(mediumResolutionSize.height/designResolutionSize.height, mediumResolutionSize.width/designResolutionSize.width));
+    {
+        director->setContentScaleFactor(MIN(mediumResolutionSize.height / designResolutionSize.height / 2.0915, mediumResolutionSize.width / designResolutionSize.width / 2.0915));
     }
     // if the frame's height is smaller than the height of medium size.
     else
-    {        
-        director->setContentScaleFactor(MIN(smallResolutionSize.height/designResolutionSize.height, smallResolutionSize.width/designResolutionSize.width));
+    {
+        director->setContentScaleFactor(MIN(smallResolutionSize.height / designResolutionSize.height / 2.0915, smallResolutionSize.width / designResolutionSize.width / 2.0915));
     }
 
     register_all_packages();
-
     // create a scene. it's an autorelease object
-    auto scene = HelloWorld::createScene();
 
+    Director::getInstance()->setProjection(cocos2d::Director::Projection::_2D);
+    Director::getInstance()->setDepthTest(true);
+
+    /* auto scene = HelloWorld::createScene(0);*/
+     //auto scene = ExploreScene::createScene();
+
+    auto scene = StartScene::create();
     // run
     director->runWithScene(scene);
 
