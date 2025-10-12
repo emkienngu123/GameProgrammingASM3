@@ -151,14 +151,40 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\EndScene.cpp" />
+    <ClCompile Include="..\Classes\Enemy_Boss.cpp" />
+    <ClCompile Include="..\Classes\Enemy_Bunby.cpp" />
+    <ClCompile Include="..\Classes\Enemy_Metall.cpp" />
+    <ClCompile Include="..\Classes\GameStarter.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
-    <ClCompile Include="..\Classes\Scene\StartScene.cpp" />
+    <ClCompile Include="..\Classes\MainScene.cpp" />
+    <ClCompile Include="..\Classes\ReplaceEndSceneHelper.cpp" />
+    <ClCompile Include="..\Classes\ReplaceMainSceneHelper.cpp" />
+    <ClCompile Include="..\Classes\ReplaceTutorialSceneHelper.cpp" />
+    <ClCompile Include="..\Classes\RestartHelper.cpp" />
+    <ClCompile Include="..\Classes\SoundManager.cpp" />
+    <ClCompile Include="..\Classes\TitleScene.cpp" />
+    <ClCompile Include="..\Classes\TutorialScene.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\Core.h" />
+    <ClInclude Include="..\Classes\EndScene.h" />
+    <ClInclude Include="..\Classes\Enemy_Boss.h" />
+    <ClInclude Include="..\Classes\Enemy_Bunby.h" />
+    <ClInclude Include="..\Classes\Enemy_Metall.h" />
+    <ClInclude Include="..\Classes\GameStarter.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
-    <ClInclude Include="..\Classes\Scene\StartScene.h" />
+    <ClInclude Include="..\Classes\MainScene.h" />
+    <ClInclude Include="..\Classes\ReplaceEndSceneHelper.h" />
+    <ClInclude Include="..\Classes\ReplaceMainSceneHelper.h" />
+    <ClInclude Include="..\Classes\ReplaceTutorialSceneHelper.h" />
+    <ClInclude Include="..\Classes\RestartHelper.h" />
+    <ClInclude Include="..\Classes\SoundManager.h" />
+    <ClInclude Include="..\Classes\TitleScene.h" />
+    <ClInclude Include="..\Classes\TutorialScene.h" />
+    <ClInclude Include="..\Classes\Utils.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>
