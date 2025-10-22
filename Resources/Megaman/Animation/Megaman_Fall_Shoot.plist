@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>jumpshoot_0.png</key>
+            <key>fall_shoot_0.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -19,7 +19,7 @@
                 <key>textureRotated</key>
                 <true/>
             </dict>
-            <key>jumpshoot_1.png</key>
+            <key>fall_shoot_1.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -34,7 +34,7 @@
                 <key>textureRotated</key>
                 <true/>
             </dict>
-            <key>jumpshoot_2.png</key>
+            <key>fall_shoot_2.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -49,7 +49,7 @@
                 <key>textureRotated</key>
                 <true/>
             </dict>
-            <key>jumpshoot_3.png</key>
+            <key>fall_shoot_3.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -78,7 +78,7 @@
             <key>size</key>
             <string>{101,88}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:4b9e7e67982856e2aa0ce2c9bb3e2d96:28f54d8d6db088ce988d89288230148e:88be8ac244d5bff6a430d233d8b546d6$</string>
+            <string>$TexturePacker:SmartUpdate:d817455b4375dc9e88dba082320f3c9b:28f54d8d6db088ce988d89288230148e:88be8ac244d5bff6a430d233d8b546d6$</string>
             <key>textureFileName</key>
             <string>Megaman_Fall_Shoot.png</string>
         </dict>
