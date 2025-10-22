@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>pose_1.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{45,38}</string>
+                <key>spriteSourceSize</key>
+                <string>{45,38}</string>
+                <key>textureRect</key>
+                <string>{{1,1},{45,38}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>3</integer>
+            <key>pixelFormat</key>
+            <string>RGBA8888</string>
+            <key>premultiplyAlpha</key>
+            <false/>
+            <key>realTextureFileName</key>
+            <string>Megaman_Shoot_Pose.png</string>
+            <key>size</key>
+            <string>{47,40}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:6d58c164116df9b89b8845d316a3acaa:c87d61ea579b8ed230ca28b2688bff27:e399890e39fd628ddc4951a7f57658db$</string>
+            <key>textureFileName</key>
+            <string>Megaman_Shoot_Pose.png</string>
+        </dict>
+    </dict>
+</plist>
