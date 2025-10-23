@@ -30,7 +30,7 @@
                 <key>spriteSourceSize</key>
                 <string>{16,16}</string>
                 <key>textureRect</key>
-                <string>{{1,1},{16,16}}</string>
+                <string>{{19,1},{16,16}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -45,7 +45,7 @@
                 <key>spriteSourceSize</key>
                 <string>{16,16}</string>
                 <key>textureRect</key>
-                <string>{{1,1},{16,16}}</string>
+                <string>{{19,1},{16,16}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -60,7 +60,7 @@
                 <key>spriteSourceSize</key>
                 <string>{16,16}</string>
                 <key>textureRect</key>
-                <string>{{19,1},{16,16}}</string>
+                <string>{{37,1},{16,16}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -75,7 +75,7 @@
                 <key>spriteSourceSize</key>
                 <string>{16,16}</string>
                 <key>textureRect</key>
-                <string>{{37,1},{16,16}}</string>
+                <string>{{55,1},{16,16}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -90,7 +90,7 @@
                 <key>spriteSourceSize</key>
                 <string>{16,16}</string>
                 <key>textureRect</key>
-                <string>{{55,1},{16,16}}</string>
+                <string>{{73,1},{16,16}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -104,13 +104,13 @@
             <key>premultiplyAlpha</key>
             <false/>
             <key>realTextureFileName</key>
-            <string>Particle_Enemy_Explosion.png</string>
+            <string>Particle_Boss_Smoke.png</string>
             <key>size</key>
-            <string>{72,18}</string>
+            <string>{90,18}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:ff9d172b00945e2a8a28f1db58418d2c:41edeaff5f74eb0f42b6fd0f0eb0b51d:fb7c368e31072048b3c0150f8e1e272f$</string>
+            <string>$TexturePacker:SmartUpdate:d2c2444c5b1be7e6cb4f0252522c13ea:19ba51d6abd4aa398adc181f22c44354:3c546b532bd99fe34a13ac0754199683$</string>
             <key>textureFileName</key>
-            <string>Particle_Enemy_Explosion.png</string>
+            <string>Particle_Boss_Smoke.png</string>
         </dict>
     </dict>
 </plist>
