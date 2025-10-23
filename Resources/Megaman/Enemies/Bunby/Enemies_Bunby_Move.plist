@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>bunby_move_0.png</key>
+            <key>bunby_move_n}-0.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -19,7 +19,7 @@
                 <key>textureRotated</key>
                 <true/>
             </dict>
-            <key>bunby_move_1.png</key>
+            <key>bunby_move_n}-1.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -34,7 +34,7 @@
                 <key>textureRotated</key>
                 <true/>
             </dict>
-            <key>bunby_move_2.png</key>
+            <key>bunby_move_n}-2.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -63,7 +63,7 @@
             <key>size</key>
             <string>{50,120}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:52269dca0e6efa93b2b854a68fbe0648:63ba368e367bb8d9d25edf06fb589606:1fa0ecdb4e2c50c4b18cc8d966afbd37$</string>
+            <string>$TexturePacker:SmartUpdate:1dc0b7c11d024c48773ad3bfe39d3c9a:d98433609fc5463e41bd4a9bdd148a5a:1fa0ecdb4e2c50c4b18cc8d966afbd37$</string>
             <key>textureFileName</key>
             <string>Enemies_Bunby_Move.png</string>
         </dict>
