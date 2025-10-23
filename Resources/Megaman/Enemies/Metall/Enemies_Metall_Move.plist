@@ -71,11 +71,11 @@
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{20,21}</string>
+                <string>{22,21}</string>
                 <key>spriteSourceSize</key>
-                <string>{20,21}</string>
+                <string>{22,21}</string>
                 <key>textureRect</key>
-                <string>{{25,25},{20,21}}</string>
+                <string>{{1,25},{22,21}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -108,7 +108,7 @@
             <key>size</key>
             <string>{47,47}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:ede0f501801a6335aa4286a96ecae546:85715e3737581da9f7b60b2544b4fc88:0610642a90bed9f215941481f5458e0b$</string>
+            <string>$TexturePacker:SmartUpdate:1957b5eec30ffca58b62ef9d461614b0:f92fb510d0f53eaa07ce47a3e24c45a7:0610642a90bed9f215941481f5458e0b$</string>
             <key>textureFileName</key>
             <string>Enemies_Metall_Move.png</string>
         </dict>

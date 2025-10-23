@@ -15,7 +15,7 @@
                 <key>spriteSourceSize</key>
                 <string>{20,12}</string>
                 <key>textureRect</key>
-                <string>{{1,111},{20,12}}</string>
+                <string>{{1,92},{20,12}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -30,7 +30,7 @@
                 <key>spriteSourceSize</key>
                 <string>{20,17}</string>
                 <key>textureRect</key>
-                <string>{{1,92},{20,17}}</string>
+                <string>{{1,73},{20,17}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -45,7 +45,7 @@
                 <key>spriteSourceSize</key>
                 <string>{22,21}</string>
                 <key>textureRect</key>
-                <string>{{1,47},{22,21}}</string>
+                <string>{{1,25},{22,21}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -60,9 +60,9 @@
                 <key>spriteSourceSize</key>
                 <string>{20,23}</string>
                 <key>textureRect</key>
-                <string>{{1,1},{20,23}}</string>
+                <string>{{1,48},{20,23}}</string>
                 <key>textureRotated</key>
-                <true/>
+                <false/>
             </dict>
             <key>metall_awake_4.png</key>
             <dict>
@@ -71,11 +71,11 @@
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{22,20}</string>
+                <string>{22,21}</string>
                 <key>spriteSourceSize</key>
-                <string>{22,20}</string>
+                <string>{22,21}</string>
                 <key>textureRect</key>
-                <string>{{1,70},{22,20}}</string>
+                <string>{{1,25},{22,21}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -90,7 +90,7 @@
                 <key>spriteSourceSize</key>
                 <string>{22,22}</string>
                 <key>textureRect</key>
-                <string>{{1,23},{22,22}}</string>
+                <string>{{1,1},{22,22}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -106,9 +106,9 @@
             <key>realTextureFileName</key>
             <string>Enemies_Metall_Awake.png</string>
             <key>size</key>
-            <string>{25,124}</string>
+            <string>{24,105}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:f845ee4bf3448b97f4f5cd6530f92d8b:14e7e739ea507fe0b4712a067caee53e:08eba0fa4d18a067366c5be4c5e1dee8$</string>
+            <string>$TexturePacker:SmartUpdate:b33d9c805a4aed7520fb3d435892ca3a:d779c8e0b6a1f34febb616c56a64a47d:08eba0fa4d18a067366c5be4c5e1dee8$</string>
             <key>textureFileName</key>
             <string>Enemies_Metall_Awake.png</string>
         </dict>
