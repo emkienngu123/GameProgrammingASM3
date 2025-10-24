@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>explosion_small_00.png</key>
+            <key>NES - Mega Man - Miscellaneous - Hyper Bomb Explosion-0.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -19,7 +19,37 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>explosion_small_01.png</key>
+            <key>NES - Mega Man - Miscellaneous - Hyper Bomb Explosion-1.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{16,16}</string>
+                <key>spriteSourceSize</key>
+                <string>{16,16}</string>
+                <key>textureRect</key>
+                <string>{{1,1},{16,16}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>NES - Mega Man - Miscellaneous - Hyper Bomb Explosion-2.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{16,16}</string>
+                <key>spriteSourceSize</key>
+                <string>{16,16}</string>
+                <key>textureRect</key>
+                <string>{{1,1},{16,16}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>NES - Mega Man - Miscellaneous - Hyper Bomb Explosion-3.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -34,7 +64,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>explosion_small_02.png</key>
+            <key>NES - Mega Man - Miscellaneous - Hyper Bomb Explosion-4.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -49,7 +79,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>explosion_small_03.png</key>
+            <key>NES - Mega Man - Miscellaneous - Hyper Bomb Explosion-5.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
