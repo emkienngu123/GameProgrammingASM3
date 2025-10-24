@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>SNES - Mega Man &amp; Bass (JPN) - Enemies - Metall SV-0.png</key>
+            <key>metall_attack_00.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -19,7 +19,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>SNES - Mega Man &amp; Bass (JPN) - Enemies - Metall SV-1.png</key>
+            <key>metall_attack_01.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -34,7 +34,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>SNES - Mega Man &amp; Bass (JPN) - Enemies - Metall SV-2.png</key>
+            <key>metall_attack_02.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -49,7 +49,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>SNES - Mega Man &amp; Bass (JPN) - Enemies - Metall SV-3.png</key>
+            <key>metall_attack_03.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -64,7 +64,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>SNES - Mega Man &amp; Bass (JPN) - Enemies - Metall SV-4.png</key>
+            <key>metall_attack_04.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -79,7 +79,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>SNES - Mega Man &amp; Bass (JPN) - Enemies - Metall SV-5.png</key>
+            <key>metall_attack_05.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -94,7 +94,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>SNES - Mega Man &amp; Bass (JPN) - Enemies - Metall SV-6.png</key>
+            <key>metall_attack_06.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -109,7 +109,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>SNES - Mega Man &amp; Bass (JPN) - Enemies - Metall SV-7.png</key>
+            <key>metall_attack_07.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -124,7 +124,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>SNES - Mega Man &amp; Bass (JPN) - Enemies - Metall SV-8.png</key>
+            <key>metall_attack_08.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>

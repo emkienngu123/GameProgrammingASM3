@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>mm7-a-madgrinder-0.png</key>
+            <key>subboss_attack_00.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -19,7 +19,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>mm7-a-madgrinder-1.png</key>
+            <key>subboss_attack_01.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -34,7 +34,7 @@
                 <key>textureRotated</key>
                 <true/>
             </dict>
-            <key>mm7-a-madgrinder-2.png</key>
+            <key>subboss_attack_02.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -49,7 +49,7 @@
                 <key>textureRotated</key>
                 <true/>
             </dict>
-            <key>mm7-a-madgrinder-3.png</key>
+            <key>subboss_attack_03.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>

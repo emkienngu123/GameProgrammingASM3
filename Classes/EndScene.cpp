@@ -19,7 +19,7 @@ bool EndScene::init()
 	animationSprite->setPosition(Vec2(128.0f, 155.0f));
 	animationSprite->setScale(0.8f);
 
-	int allSheetNum = 70;
+	int allSheetNum = 8;
 	std::string sPath = "Megaman/Animation/Megaman_Idle.plist";
 	std::string sName = "idle_";
 	float frameDelay = 0.10f;

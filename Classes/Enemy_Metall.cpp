@@ -143,7 +143,7 @@ void Enemy_Metall::AnimState(_metallState state)
 			break;
 
 		case METALL_ATTACK:
-			allSheetNum = 3;
+			allSheetNum = 9;
 			sPath = "Megaman/Enemies/Metall/Enemies_Metall_Attack.plist";
 			sName = "metall_attack_";
 			frameDelay = 0.07f;

@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>charge_affect_0.png</key>
+            <key>charge_affect_00.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -21,7 +21,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>charge_affect_1.png</key>
+            <key>charge_affect_01.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -38,7 +38,7 @@
                 <key>textureRotated</key>
                 <true/>
             </dict>
-            <key>charge_affect_2.png</key>
+            <key>charge_affect_02.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -55,7 +55,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>charge_affect_3.png</key>
+            <key>charge_affect_03.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -72,7 +72,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>charge_affect_4.png</key>
+            <key>charge_affect_04.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -89,7 +89,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>charge_affect_5.png</key>
+            <key>charge_affect_05.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -106,7 +106,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>charge_affect_6.png</key>
+            <key>charge_affect_06.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -123,7 +123,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>charge_affect_7.png</key>
+            <key>charge_affect_07.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -140,7 +140,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>charge_affect_8.png</key>
+            <key>charge_affect_08.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -157,7 +157,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>charge_affect_9.png</key>
+            <key>charge_affect_09.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>

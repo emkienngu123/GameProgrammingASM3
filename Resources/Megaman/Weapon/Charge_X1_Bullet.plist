@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>charge_x1_bullet_0.png</key>
+            <key>charge_x1_bullet_00.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -19,7 +19,7 @@
                 <key>textureRotated</key>
                 <true/>
             </dict>
-            <key>charge_x1_bullet_1.png</key>
+            <key>charge_x1_bullet_01.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -34,7 +34,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>charge_x1_bullet_2.png</key>
+            <key>charge_x1_bullet_02.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -49,7 +49,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>charge_x1_bullet_3.png</key>
+            <key>charge_x1_bullet_03.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>

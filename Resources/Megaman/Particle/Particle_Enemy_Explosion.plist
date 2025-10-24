@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>NES - Mega Man - Miscellaneous - Hyper Bomb Explosion-0.png</key>
+            <key>enemy_explosion_00.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -19,7 +19,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>NES - Mega Man - Miscellaneous - Hyper Bomb Explosion-1.png</key>
+            <key>enemy_explosion_01.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -34,7 +34,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>NES - Mega Man - Miscellaneous - Hyper Bomb Explosion-2.png</key>
+            <key>enemy_explosion_02.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -49,7 +49,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>NES - Mega Man - Miscellaneous - Hyper Bomb Explosion-3.png</key>
+            <key>enemy_explosion_03.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -64,7 +64,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>NES - Mega Man - Miscellaneous - Hyper Bomb Explosion-4.png</key>
+            <key>enemy_explosion_04.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -79,7 +79,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>NES - Mega Man - Miscellaneous - Hyper Bomb Explosion-5.png</key>
+            <key>enemy_explosion_05.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>

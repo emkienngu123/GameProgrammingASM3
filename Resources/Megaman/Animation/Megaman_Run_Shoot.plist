@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>run_shoot_0.png</key>
+            <key>run_shoot_00.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -19,7 +19,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>run_shoot_1.png</key>
+            <key>run_shoot_01.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -34,7 +34,7 @@
                 <key>textureRotated</key>
                 <true/>
             </dict>
-            <key>run_shoot_10.png</key>
+            <key>run_shoot_02.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -49,7 +49,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>run_shoot_11.png</key>
+            <key>run_shoot_03.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -64,7 +64,7 @@
                 <key>textureRotated</key>
                 <true/>
             </dict>
-            <key>run_shoot_2.png</key>
+            <key>run_shoot_04.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -79,7 +79,7 @@
                 <key>textureRotated</key>
                 <true/>
             </dict>
-            <key>run_shoot_3.png</key>
+            <key>run_shoot_05.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -94,7 +94,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>run_shoot_4.png</key>
+            <key>run_shoot_06.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -109,7 +109,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>run_shoot_5.png</key>
+            <key>run_shoot_07.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -124,7 +124,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>run_shoot_6.png</key>
+            <key>run_shoot_08.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -139,7 +139,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>run_shoot_7.png</key>
+            <key>run_shoot_09.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -154,7 +154,7 @@
                 <key>textureRotated</key>
                 <true/>
             </dict>
-            <key>run_shoot_8.png</key>
+            <key>run_shoot_10.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -169,7 +169,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>run_shoot_9.png</key>
+            <key>run_shoot_11.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>

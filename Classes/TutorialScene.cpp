@@ -71,7 +71,7 @@ bool TutorialScene::init()
 
 	// 캐릭터를 SpwnPoint 위치에 생성할 수 있도록 좌표 준비 
 	//spawnPosition = Vec2(x, y+ (y/2));
-	spawnPosition = Vec2(x, y +(y/2)-12.0f);
+	spawnPosition = Vec2(x, y + 100);
 
 	auto colliderObjects = tmap->getObjectGroup("Collider");
 
@@ -252,7 +252,7 @@ bool TutorialScene::init()
 				auto posY = contact.getShapeA()->getBody()->getPosition().y;
 
 				auto world = this->convertToNodeSpace(Vec2(posX, posY));
-				//log("World Pos : %f, %f", world.x, world.y);
+				log("World Pos : %f, %f", world.x, world.y);
 				bulletParticleAnimState(COMMON_BULLET, world.x, world.y);
 			}
 
@@ -793,34 +793,34 @@ void TutorialScene::moveAnimState(_TmoveState state)
 		switch (state)
 		{
 		case MS_INIT:
-			allSheetNum = 6;
+			allSheetNum = 7;
 			sPath = "Megaman/Animation/Megaman_Teleport_Init.plist";
 			sName = "teleport_";
 			frameDelay = 0.05f;
 
 			break;
 		case MS_TELEPORT:
-			allSheetNum = 7;
+			allSheetNum = 18;
 			sPath = "Megaman/Animation/Megaman_Teleport.plist";
 			sName = "teleport_";
 			frameDelay = 0.05f;
 
 			break;
 		case MS_STOP:
-			allSheetNum = 70;
+			allSheetNum = 8;
 			sPath = "Megaman/Animation/Megaman_Idle.plist";
 			sName = "idle_";
 			frameDelay = 0.12f;
 
 			break;
 		case MS_RUN:
-			allSheetNum = 10;
+			allSheetNum = 12;
 			sPath = "Megaman/Animation/Megaman_Run.plist";
 			sName = "run_";
 			frameDelay = 0.07f;
 			break;
 		case MS_JUMP:
-			allSheetNum = 5;
+			allSheetNum = 7;
 			sPath = "Megaman/Animation/Megaman_Jump.plist";
 			sName = "jump_";
 			frameDelay = 0.05f;
@@ -908,6 +908,7 @@ void TutorialScene::moveAnimState(_TmoveState state)
 	moveBeforeState = state;
 }
 
+
 void TutorialScene::attackAnimState(_TattackState state)
 {
 	int allSheetNum;
@@ -915,42 +916,42 @@ void TutorialScene::attackAnimState(_TattackState state)
 	std::string sName;
 	float frameDelay;
 
-	if (state != attackBeforeState || state == STOP_SHOOT) {
+	if (state != attackBeforeState) {
 		if (isInited)
 			attackChar->stopAllActions();
+
 
 		switch (state)
 		{
 		case DEFAULT_POSE:
-			//allSheetNum = 1;
-			//sPath = "Megaman/Animation/Megaman_Shoot_Pose.plist";
-			//sName = "pose_";
-			//frameDelay = 1000.0f;
-
+			allSheetNum = 1;
+			sPath = "Megaman/Animation/Megaman_Shoot_Pose.plist";
+			sName = "pose_";
+			frameDelay = 1000.0f;
+			break;
 
 		case STOP_SHOOT:
 			allSheetNum = 3;
 			sPath = "Megaman/Animation/Megaman_Shoot.plist";
 			sName = "shoot_";
 			frameDelay = 0.0333f;
-
 			break;
 
 		case RUN_SHOOT:
-			allSheetNum = 10;
+			allSheetNum = 12;
 			sPath = "Megaman/Animation/Megaman_Run_Shoot.plist";
 			sName = "run_shoot_";
 			frameDelay = 0.07f;
-
 			break;
+
 		case JUMP_SHOOT:
-			allSheetNum = 5;
+			allSheetNum = 4;
 			sPath = "Megaman/Animation/Megaman_Jump_Shoot.plist";
 			sName = "jump_shoot_";
 			frameDelay = 0.05f;
 			break;
 		case FALL_SHOOT:
-			allSheetNum = 5;
+			allSheetNum = 4;
 			sPath = "Megaman/Animation/Megaman_Fall_Shoot.plist";
 			sName = "fall_shoot_";
 			frameDelay = 0.1f;
@@ -1032,6 +1033,7 @@ void TutorialScene::bulletParticleAnimState(_Tbullets state, float x, float y)
 	std::string sName;
 	float frameDelay = 0.05f;
 	float particleScale = 1.0f;
+	CCLOG("Bullet Particle Animation State: %d", "TutorialScene.cpp", 999, state);
 
 	switch (state)
 	{
@@ -1043,13 +1045,14 @@ void TutorialScene::bulletParticleAnimState(_Tbullets state, float x, float y)
 		break;
 
 	case CHARGE_X1:
-		allSheetNum = 5;
+		allSheetNum = 10;
 		sPath = "Megaman/Particle/Particle_Charge_Affect.plist";
 		sName = "charge_affect_";
 		particleScale = 0.5f;
 		break;
+	 
 	case CHARGE_X2:
-		allSheetNum = 5;
+		allSheetNum = 10;
 		sPath = "Megaman/Particle/Particle_Charge_Affect.plist";
 		sName = "charge_affect_";
 		break;
@@ -1181,6 +1184,7 @@ void TutorialScene::turnOffMoveSprite()
 	if (character->isVisible()) {
 		character->setVisible(false);
 		attackChar->setVisible(true);
+		CCLOG("attackChar visible = %d", attackChar->isVisible());
 	}
 }
 
@@ -1250,6 +1254,7 @@ void TutorialScene::createBullet(_Tbullets state)
 
 	// 탄환 생성
 	auto pBullet = new Sprite();
+	Sprite* pBulletVisual = nullptr;
 	auto bulletPBody = PhysicsBody::createBox(size, PHYSICSBODY_MATERIAL_DEFAULT);
 	bulletPBody->setGravityEnable(false);
 
@@ -1300,10 +1305,18 @@ void TutorialScene::createBullet(_Tbullets state)
 		bulletAnim->retain();
 
 
+		pBulletVisual = Sprite::create();
+		pBulletVisual->runAction(RepeatForever::create(bulletAnim));
+		pBulletVisual->setAnchorPoint(Vec2(0.5f, 0.5f));
 
-		pBullet = Sprite::create("Placeholder.png");
+
+		pBullet = Sprite::create();
+		pBullet->setContentSize(size);
+		pBullet->setAnchorPoint(Vec2(0.5f, 0.5f));
 		pBullet->setPosition(shootPosition);
 
+		pBulletVisual->setPosition(Vec2(size.width * 0.5f, size.height * 0.5f));
+		pBullet->addChild(pBulletVisual);
 		if (state == CHARGE_X1) {
 			bulletPBody->setTag(core::TagIndex::CHARGE_X1);
 			soundManager->PlayAttackEffect(chargeX1Path);
@@ -1323,7 +1336,7 @@ void TutorialScene::createBullet(_Tbullets state)
 		bulletPBody->setTag(10);
 
 		pBullet->setPhysicsBody(bulletPBody);*/
-		pBullet->runAction(bulletAnim);
+		//pBullet->runAction(bulletAnim);
 	}
 
 	bulletPBody->setCategoryBitmask(Utils::CreateMask(core::CategoryBits::PLAYER_PROJECTILE));
@@ -1345,19 +1358,26 @@ void TutorialScene::createBullet(_Tbullets state)
 	this->addChild(bulletSprite);*/
 
 	this->addChild(pBullet);
-
-	// 액션 적용
 	if (character->isFlippedX()) {
-		pBullet->setFlippedX(true);
-		//auto forward = MoveBy::create(0.8f, Vec2(-256, 0));
+		// If pBulletVisual exists, it's a charge bullet. Flip the visual child.
+		if (pBulletVisual != nullptr) {
+			pBulletVisual->setFlippedX(true);
+		}
+		// Otherwise, it's a common bullet. Flip the main sprite.
+		else {
+			pBullet->setFlippedX(true);
+		}
 		bulletPBody->setVelocity(Vec2(-175.0f, 0.0f));
-		//pBullet->runAction(forward);
 	}
-
 	else {
-		pBullet->setFlippedX(false);
-		//auto forward = MoveBy::create(0.8f, Vec2(256, 0));
+		// If pBulletVisual exists, it's a charge bullet.
+		if (pBulletVisual != nullptr) {
+			pBulletVisual->setFlippedX(false);
+		}
+		// Otherwise, it's a common bullet.
+		else {
+			pBullet->setFlippedX(false);
+		}
 		bulletPBody->setVelocity(Vec2(175.0f, 0.0f));
-		//pBullet->runAction(forward);
 	}
 }

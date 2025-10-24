@@ -13,7 +13,7 @@ bool TitleScene::init()
 {
 	if (!Scene::init()) return false;
 
-	titleSprite = Sprite::create("MM7.png");
+	titleSprite = Sprite::create("Megaman/UI/Title.png");
 	titleSprite->setAnchorPoint(Vec2::ZERO);
 	titleSprite->getTexture()->setAliasTexParameters();
 

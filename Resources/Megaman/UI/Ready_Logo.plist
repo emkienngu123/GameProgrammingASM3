@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>ready_0.png</key>
+            <key>ready_00.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -19,7 +19,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>ready_1.png</key>
+            <key>ready_01.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -34,7 +34,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>ready_10.png</key>
+            <key>ready_02.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -49,7 +49,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>ready_11.png</key>
+            <key>ready_03.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -64,7 +64,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>ready_2.png</key>
+            <key>ready_04.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -79,7 +79,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>ready_3.png</key>
+            <key>ready_05.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -94,7 +94,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>ready_4.png</key>
+            <key>ready_06.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -109,7 +109,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>ready_5.png</key>
+            <key>ready_07.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -124,7 +124,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>ready_6.png</key>
+            <key>ready_08.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -139,7 +139,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>ready_7.png</key>
+            <key>ready_09.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -154,7 +154,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>ready_8.png</key>
+            <key>ready_10.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -169,7 +169,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>ready_9.png</key>
+            <key>ready_11.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>

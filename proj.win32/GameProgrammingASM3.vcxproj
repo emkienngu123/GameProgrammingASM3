@@ -163,6 +163,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClCompile Include="..\Classes\ReplaceTutorialSceneHelper.cpp" />
     <ClCompile Include="..\Classes\RestartHelper.cpp" />
     <ClCompile Include="..\Classes\SoundManager.cpp" />
+    <ClCompile Include="..\Classes\TestScene.cpp" />
     <ClCompile Include="..\Classes\TitleScene.cpp" />
     <ClCompile Include="..\Classes\TutorialScene.cpp" />
     <ClCompile Include="main.cpp" />
@@ -182,6 +183,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)\Resources\" /D /E /I /F /Y
     <ClInclude Include="..\Classes\ReplaceTutorialSceneHelper.h" />
     <ClInclude Include="..\Classes\RestartHelper.h" />
     <ClInclude Include="..\Classes\SoundManager.h" />
+    <ClInclude Include="..\Classes\TestScene.h" />
     <ClInclude Include="..\Classes\TitleScene.h" />
     <ClInclude Include="..\Classes\TutorialScene.h" />
     <ClInclude Include="..\Classes\Utils.h" />

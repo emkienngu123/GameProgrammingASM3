@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>subboss_move_0.png</key>
+            <key>subboss_move_00.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -19,7 +19,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>subboss_move_1.png</key>
+            <key>subboss_move_01.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -34,7 +34,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>subboss_move_10.png</key>
+            <key>subboss_move_02.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -49,7 +49,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>subboss_move_11.png</key>
+            <key>subboss_move_03.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -64,7 +64,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>subboss_move_12.png</key>
+            <key>subboss_move_04.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -79,7 +79,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>subboss_move_13.png</key>
+            <key>subboss_move_05.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -94,7 +94,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>subboss_move_14.png</key>
+            <key>subboss_move_06.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -109,7 +109,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>subboss_move_15.png</key>
+            <key>subboss_move_07.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -124,7 +124,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>subboss_move_16.png</key>
+            <key>subboss_move_08.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -139,7 +139,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>subboss_move_17.png</key>
+            <key>subboss_move_09.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -154,7 +154,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>subboss_move_18.png</key>
+            <key>subboss_move_10.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -169,7 +169,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>subboss_move_19.png</key>
+            <key>subboss_move_11.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -184,7 +184,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>subboss_move_2.png</key>
+            <key>subboss_move_12.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -199,7 +199,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>subboss_move_3.png</key>
+            <key>subboss_move_13.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -214,7 +214,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>subboss_move_4.png</key>
+            <key>subboss_move_14.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -229,7 +229,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>subboss_move_5.png</key>
+            <key>subboss_move_15.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -244,7 +244,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>subboss_move_6.png</key>
+            <key>subboss_move_16.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -259,7 +259,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>subboss_move_7.png</key>
+            <key>subboss_move_17.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -274,7 +274,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>subboss_move_8.png</key>
+            <key>subboss_move_18.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -289,7 +289,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>subboss_move_9.png</key>
+            <key>subboss_move_19.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>

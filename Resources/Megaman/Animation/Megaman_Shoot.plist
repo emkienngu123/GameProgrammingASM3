@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>item-46.png</key>
+            <key>shoot_00.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -19,7 +19,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>item-47.png</key>
+            <key>shoot_01.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -34,7 +34,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>item-48.png</key>
+            <key>shoot_02.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>

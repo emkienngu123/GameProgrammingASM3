@@ -1,5 +1,5 @@
 /****************************************************************************
- Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
+ Copyright (c) 2017-2018 Xiamen Yaji Software Co.tm, Ltd.
  
  http://www.cocos2d-x.org
  
@@ -133,8 +133,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // create a scene. it's an autorelease object
     //auto scene = HelloWorld::createScene();
-    auto scene = GameStarter::createScene();
-
+    //auto scene = GameStarter::createScene();
+	auto scene = GameStarter::createScene();
     // run
     director->runWithScene(scene);
 

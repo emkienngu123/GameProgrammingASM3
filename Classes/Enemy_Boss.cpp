@@ -168,7 +168,7 @@ void Enemy_Boss::AnimState(_bossState state)
 			break;
 
 		case BOSS_ATTACK:
-			allSheetNum = 11;
+			allSheetNum = 4;
 			sPath = "Megaman/Enemies/Mad_Grinder/Subboss_Attack.plist";
 			sName = "subboss_attack_";
 			frameDelay = 0.07f;
@@ -538,7 +538,7 @@ void Enemy_Boss::returnBlade(cocos2d::PhysicsBody* bladeBody)
 
 void Enemy_Boss::createSmoke(cocos2d::Sprite* smokeSprite)
 {
-	int allSheetNum = 10;
+	int allSheetNum = 6;
 	std::string sPath = "Megaman/Particle/Particle_Boss_Smoke.plist";
 	std::string sName = "enemy_smoke_";
 	float frameDelay = 0.065f;
