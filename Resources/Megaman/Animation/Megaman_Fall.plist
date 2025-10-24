@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>fall_0.png</key>
+            <key>fall_00.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -19,7 +19,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>fall_1.png</key>
+            <key>fall_01.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -34,7 +34,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>fall_2.png</key>
+            <key>fall_02.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -49,7 +49,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>fall_3.png</key>
+            <key>fall_03.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -64,7 +64,7 @@
                 <key>textureRotated</key>
                 <true/>
             </dict>
-            <key>fall_4.png</key>
+            <key>fall_04.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>

@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>item-24.png</key>
+            <key>idle_00.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -19,7 +19,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>item-25.png</key>
+            <key>idle_01.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -34,7 +34,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>item-26.png</key>
+            <key>idle_02.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -49,7 +49,7 @@
                 <key>textureRotated</key>
                 <true/>
             </dict>
-            <key>item-27.png</key>
+            <key>idle_03.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -64,7 +64,7 @@
                 <key>textureRotated</key>
                 <true/>
             </dict>
-            <key>item-28.png</key>
+            <key>idle_04.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -79,7 +79,7 @@
                 <key>textureRotated</key>
                 <true/>
             </dict>
-            <key>item-29.png</key>
+            <key>idle_05.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -94,7 +94,7 @@
                 <key>textureRotated</key>
                 <true/>
             </dict>
-            <key>item-30.png</key>
+            <key>idle_06.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -109,7 +109,7 @@
                 <key>textureRotated</key>
                 <true/>
             </dict>
-            <key>item-31.png</key>
+            <key>idle_07.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>

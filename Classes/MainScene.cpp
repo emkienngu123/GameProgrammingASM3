@@ -50,7 +50,8 @@ bool MainScene::init()
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	// Load Tile Map (Tiled)
-	tmap = TMXTiledMap::create("MainStage_Tileset/ruined_street_tileset.tmx");
+	
+	tmap = TMXTiledMap::create("MainStage_Tileset/ruined_street_tileset_v0.tmx");
 	background = tmap->getLayer("Background");
 	background->getTexture()->setAliasTexParameters();
 
@@ -65,7 +66,7 @@ bool MainScene::init()
 	parallax->addChild(tmap, 2, Vec2(1.0f, 1.0f), Vec2::ZERO);
 
 	wlayer->addChild(parallax, 0);
-
+	
 	// Init Player's Spawn Point
 	auto spawnObjects = tmap->getObjectGroup("SpawnPoint");
 
@@ -79,7 +80,7 @@ bool MainScene::init()
 	// 캐릭터를 SpwnPoint 위치에 생성할 수 있도록 좌표 준비 
 	spawnPosition = Vec2(x, y + 150.0f);
 
-
+	
 	// Init Map Collider (Ground)
 	auto colliderObjects = tmap->getObjectGroup("Collider");
 
@@ -116,7 +117,6 @@ bool MainScene::init()
 
 		wlayer->addChild(_colliderSprite.at(i));
 	}
-
 	// Init Ground's DeadEnd (for Enemies)
 	auto deadEndObjects = tmap->getObjectGroup("DeadEnd");
 	auto deadEnds = deadEndObjects->getObjects();
@@ -210,12 +210,12 @@ bool MainScene::init()
 
 		wlayer->addChild(_BossMoveCollider[i]);
 	}
-
+	
 	_BossMoveCollider[1]->getPhysicsBody()->setEnabled(false);
 	_BossMoveCollider[2]->getPhysicsBody()->setEnabled(false);
-	
 
 	// Return Boss's Shooting Blade Boundary
+	
 	auto bladeBoundaryObjects = tmap->getObjectGroup("BladeWall");
 	ValueVector bladeBoundarys = bladeBoundaryObjects->getObjects();
 	_BladeBoundaryCollider.reserve(10);
@@ -244,6 +244,7 @@ bool MainScene::init()
 
 		wlayer->addChild(_BladeBoundaryCollider[i]);
 	}
+	
 
 
 	_BladeBoundaryCollider[1]->getPhysicsBody()->setEnabled(false);
@@ -333,6 +334,8 @@ bool MainScene::init()
 		wlayer->addChild(metalls[i]);
 	}
 	log("metalls Size : %d", metalls.size());
+
+
 
 	// Spawn Enemies 2 (Bunby Tank)
 	auto bunbySpawnObjects = tmap->getObjectGroup("BunbySpawn");
@@ -1006,7 +1009,6 @@ bool MainScene::init()
 		}
 		return true;
 		};
-
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(contact, wlayer);
 
 	////////////////////////////////////////////////////////
@@ -1022,7 +1024,6 @@ bool MainScene::init()
 
 	soundManager->PreloadBGM(bgmPath);
 	soundManager->PlayBGM(bgmPath);
-
 	this->scheduleUpdate();
 	
 	return true;
@@ -1040,6 +1041,7 @@ void MainScene::onEnter()
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(_listener, this);
 
 	readyLogoAnim();
+	CCLOG("MainScene onEnter");
 }
 
 void MainScene::onExit()
@@ -1531,34 +1533,34 @@ void MainScene::moveAnimState(_moveState state)
 		switch (state)
 		{
 		case MS_INIT:
-			allSheetNum = 6;
+			allSheetNum = 7;
 			sPath = "Megaman/Animation/Megaman_Teleport_Init.plist";
 			sName = "teleport_";
 			frameDelay = 0.05f;
 			break;
 
 		case MS_TELEPORT:
-			allSheetNum = 7;
+			allSheetNum = 18;
 			sPath = "Megaman/Animation/Megaman_Teleport.plist";
 			sName = "teleport_";
 			frameDelay = 0.05f;
 			break;
 
 		case MS_STOP:
-			allSheetNum = 70;
+			allSheetNum = 8;
 			sPath = "Megaman/Animation/Megaman_Idle.plist";
 			sName = "idle_";
 			frameDelay = 0.12f;
 			
 			break;
 		case MS_RUN:
-			allSheetNum = 10;
+			allSheetNum = 12;
 			sPath = "Megaman/Animation/Megaman_Run.plist";
 			sName = "run_";
 			frameDelay = 0.07f;
 			break;
 		case MS_JUMP:
-			allSheetNum = 5;
+			allSheetNum = 7;
 			sPath = "Megaman/Animation/Megaman_Jump.plist";
 			sName = "jump_";
 			frameDelay = 0.05f;
@@ -1677,6 +1679,13 @@ void MainScene::attackAnimState(_attackState state)
 
 		switch (state)
 		{
+		case DEFAULT_POSE:
+			allSheetNum = 1;
+			sPath = "Megaman/Animation/Megaman_Shoot_Pose.plist";
+			sName = "pose_";
+			frameDelay = 1000.0f;
+			break;
+
 		case STOP_SHOOT:
 			allSheetNum = 3;
 			sPath = "Megaman/Animation/Megaman_Shoot.plist";
@@ -1686,20 +1695,20 @@ void MainScene::attackAnimState(_attackState state)
 			break;
 
 		case RUN_SHOOT:
-			allSheetNum = 10;
+			allSheetNum = 12;
 			sPath = "Megaman/Animation/Megaman_Run_Shoot.plist";
 			sName = "run_shoot_";
 			frameDelay = 0.07f;
 
 			break;
 		case JUMP_SHOOT:
-			allSheetNum = 5;
+			allSheetNum = 4;
 			sPath = "Megaman/Animation/Megaman_Jump_Shoot.plist";
 			sName = "jump_shoot_";
 			frameDelay = 0.05f;
 			break;
 		case FALL_SHOOT:
-			allSheetNum = 5;
+			allSheetNum = 4;
 			sPath = "Megaman/Animation/Megaman_Fall_Shoot.plist";
 			sName = "fall_shoot_";
 			frameDelay = 0.1f;
@@ -1709,6 +1718,7 @@ void MainScene::attackAnimState(_attackState state)
 		
 		/////////////////////////////////////////////////////////////////////////////////
 		// 외부 프로그램을 사용하여 만든 plist 파일 불러오기
+		CCLOG(sPath.c_str());
 		auto cache = SpriteFrameCache::getInstance();
 		cache->addSpriteFramesWithFile(sPath);
 
@@ -1836,9 +1846,10 @@ void MainScene::readyLogoAnim()
 	Vector<SpriteFrame*> animFrames;
 	//ValueMap myValueMap;
 
-	for (int i = 0; i < 27; i++) {
+	for (int i = 0; i < 12; i++) {
 
 		// StringUtils::format => 지정한 형식으로 문자열을 생성
+		
 		std::string _frames = StringUtils::format("ready_%02d.png", i);
 
 		// 생성한 문자열을 이용하여 plist 내부의 SpriteFrame 정보를 가져옴
@@ -1846,10 +1857,10 @@ void MainScene::readyLogoAnim()
 		//frame->setAnchorPoint(Vec2(0, 0));
 		frame->getTexture()->setAliasTexParameters();
 		// 선별한 SpriteFrame을 삽입
-		
 		animFrames.pushBack(frame);
 	}
 
+	CCLOG("Ready Logo Animation Start");
 	// plist 기반으로 만든 SpriteFrame 정보를 활용하여 인스턴스 생성
 	auto animation = Animation::createWithSpriteFrames(animFrames, 0.075);
 	

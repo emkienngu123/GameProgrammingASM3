@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>item-123.png</key>
+            <key>jump_00.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -19,7 +19,7 @@
                 <key>textureRotated</key>
                 <true/>
             </dict>
-            <key>item-124.png</key>
+            <key>jump_01.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -34,7 +34,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>item-125.png</key>
+            <key>jump_02.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -49,7 +49,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>item-126.png</key>
+            <key>jump_03.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -64,7 +64,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>item-134.png</key>
+            <key>jump_04.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -79,7 +79,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>item-135.png</key>
+            <key>jump_05.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -94,7 +94,7 @@
                 <key>textureRotated</key>
                 <true/>
             </dict>
-            <key>item-136.png</key>
+            <key>jump_06.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>

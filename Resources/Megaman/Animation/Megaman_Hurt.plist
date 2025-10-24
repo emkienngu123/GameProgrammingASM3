@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>hurt_0.png</key>
+            <key>hurt_00.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -19,7 +19,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>hurt_1.png</key>
+            <key>hurt_01.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -34,7 +34,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>hurt_2.png</key>
+            <key>hurt_02.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -49,7 +49,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>hurt_3.png</key>
+            <key>hurt_03.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -64,7 +64,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>hurt_4.png</key>
+            <key>hurt_04.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
