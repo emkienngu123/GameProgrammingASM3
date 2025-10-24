@@ -4,63 +4,93 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>explosion_small_0.png</key>
+            <key>NES - Mega Man - Miscellaneous - Hyper Bomb Explosion-0.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
                 <key>spriteOffset</key>
-                <string>{-2,-4}</string>
+                <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{48,40}</string>
+                <string>{16,16}</string>
                 <key>spriteSourceSize</key>
-                <string>{56,48}</string>
+                <string>{16,16}</string>
                 <key>textureRect</key>
-                <string>{{1,43},{48,40}}</string>
+                <string>{{1,1},{16,16}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>explosion_small_1.png</key>
+            <key>NES - Mega Man - Miscellaneous - Hyper Bomb Explosion-1.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
                 <key>spriteOffset</key>
-                <string>{-2,-4}</string>
+                <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{48,40}</string>
+                <string>{16,16}</string>
                 <key>spriteSourceSize</key>
-                <string>{56,48}</string>
+                <string>{16,16}</string>
                 <key>textureRect</key>
-                <string>{{1,85},{48,40}}</string>
+                <string>{{1,1},{16,16}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>explosion_small_2.png</key>
+            <key>NES - Mega Man - Miscellaneous - Hyper Bomb Explosion-2.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
                 <key>spriteOffset</key>
-                <string>{-3,-4}</string>
+                <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{50,40}</string>
+                <string>{16,16}</string>
                 <key>spriteSourceSize</key>
-                <string>{56,48}</string>
+                <string>{16,16}</string>
                 <key>textureRect</key>
-                <string>{{1,1},{50,40}}</string>
+                <string>{{1,1},{16,16}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>explosion_small_3.png</key>
+            <key>NES - Mega Man - Miscellaneous - Hyper Bomb Explosion-3.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
                 <key>spriteOffset</key>
-                <string>{-2,-4}</string>
+                <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{48,40}</string>
+                <string>{16,16}</string>
                 <key>spriteSourceSize</key>
-                <string>{56,48}</string>
+                <string>{16,16}</string>
                 <key>textureRect</key>
-                <string>{{1,43},{48,40}}</string>
+                <string>{{19,1},{16,16}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>NES - Mega Man - Miscellaneous - Hyper Bomb Explosion-4.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{16,16}</string>
+                <key>spriteSourceSize</key>
+                <string>{16,16}</string>
+                <key>textureRect</key>
+                <string>{{37,1},{16,16}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>NES - Mega Man - Miscellaneous - Hyper Bomb Explosion-5.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{16,16}</string>
+                <key>spriteSourceSize</key>
+                <string>{16,16}</string>
+                <key>textureRect</key>
+                <string>{{55,1},{16,16}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -76,9 +106,9 @@
             <key>realTextureFileName</key>
             <string>Particle_Explosion_Small.png</string>
             <key>size</key>
-            <string>{52,126}</string>
+            <string>{72,18}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:e73fb0bf429c07aa8c19c40175e10ea2:f2f302d7066a376d09fa1e4a2a28df11:544b573872f68ddff38249d98cc17ed3$</string>
+            <string>$TexturePacker:SmartUpdate:e89b43a3c58de2b6d569d36d673b11c0:41edeaff5f74eb0f42b6fd0f0eb0b51d:544b573872f68ddff38249d98cc17ed3$</string>
             <key>textureFileName</key>
             <string>Particle_Explosion_Small.png</string>
         </dict>
