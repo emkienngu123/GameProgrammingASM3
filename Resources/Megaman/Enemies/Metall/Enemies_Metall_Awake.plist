@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>metall_awake_0.png</key>
+            <key>metall_awake_00.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -19,7 +19,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>metall_awake_1.png</key>
+            <key>metall_awake_01.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -34,7 +34,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>metall_awake_2.png</key>
+            <key>metall_awake_02.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -49,7 +49,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>metall_awake_3.png</key>
+            <key>metall_awake_03.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -64,7 +64,7 @@
                 <key>textureRotated</key>
                 <true/>
             </dict>
-            <key>metall_awake_4.png</key>
+            <key>metall_awake_04.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -79,7 +79,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>metall_awake_5.png</key>
+            <key>metall_awake_05.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>

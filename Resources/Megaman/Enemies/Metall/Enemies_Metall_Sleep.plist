@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>metall_sleep_0.png</key>
+            <key>metall_sleep_00.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -19,7 +19,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>metall_sleep_1.png</key>
+            <key>metall_sleep_01.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -34,7 +34,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>metall_sleep_2.png</key>
+            <key>metall_sleep_02.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -49,7 +49,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>metall_sleep_3.png</key>
+            <key>metall_sleep_03.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -64,7 +64,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>metall_sleep_4.png</key>
+            <key>metall_sleep_04.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -79,7 +79,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>metall_sleep_5.png</key>
+            <key>metall_sleep_05.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
