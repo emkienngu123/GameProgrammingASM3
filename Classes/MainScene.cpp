@@ -1,4 +1,4 @@
-#include "MainScene.h"
+ï»¿#include "MainScene.h"
 #include "ReplaceEndSceneHelper.h"
 
 USING_NS_CC;
@@ -70,14 +70,14 @@ bool MainScene::init()
 	// Init Player's Spawn Point
 	auto spawnObjects = tmap->getObjectGroup("SpawnPoint");
 
-	// ¿ì¸®°¡ ¸¸µé¾î³õÀº Object Layer¿¡¼­ SpawnPoint¶ó°í ¼³Á¤ÇÑ ¼Ó¼º Á¤º¸¸¦ ÀĞ±â
+	// Â¿Ã¬Â¸Â®Â°Â¡ Â¸Â¸ÂµÃ©Â¾Ã®Â³ÃµÃ€Âº Object LayerÂ¿Â¡Â¼Â­ SpawnPointÂ¶Ã³Â°Ã­ Â¼Â³ÃÂ¤Ã‡Ã‘ Â¼Ã“Â¼Âº ÃÂ¤ÂºÂ¸Â¸Â¦ Ã€ÃÂ±Ã¢
 	ValueMap spawnPoint = spawnObjects->getObject("SpawnPoint");
 	Value objectval = Value(spawnPoint);
 
 	float x = spawnPoint["x"].asFloat();
 	float y = spawnPoint["y"].asFloat();
 
-	// Ä³¸¯ÅÍ¸¦ SpwnPoint À§Ä¡¿¡ »ı¼ºÇÒ ¼ö ÀÖµµ·Ï ÁÂÇ¥ ÁØºñ 
+	// Ã„Â³Â¸Â¯Ã…ÃÂ¸Â¦ SpwnPoint Ã€Â§Ã„Â¡Â¿Â¡ Â»Ã½Â¼ÂºÃ‡Ã’ Â¼Ã¶ Ã€Ã–ÂµÂµÂ·Ã ÃÃ‚Ã‡Â¥ ÃÃ˜ÂºÃ± 
 	spawnPosition = Vec2(x, y + 150.0f);
 
 	
@@ -98,12 +98,12 @@ bool MainScene::init()
 		backCollider->setDynamic(false);
 		backCollider->setCategoryBitmask(Utils::CreateMask(core::CategoryBits::PLATFORM));
 
-		backCollider->setCollisionBitmask(Utils::CreateMask(core::CategoryBits::PLAYER					// ¹°¸® Ãæµ¹
+		backCollider->setCollisionBitmask(Utils::CreateMask(core::CategoryBits::PLAYER					// Â¹Â°Â¸Â® ÃƒÃ¦ÂµÂ¹
 			, core::CategoryBits::ENEMY
 			, core::CategoryBits::ENEMY_PROJECTILE));
 
 		backCollider->setContactTestBitmask(Utils::CreateMask(core::CategoryBits::PLAYER_PROJECTILE
-			, core::CategoryBits::ENEMY_PROJECTILE));  // Äİ¸®Àü ÀÌº¥Æ®
+			, core::CategoryBits::ENEMY_PROJECTILE));  // Ã„ÃÂ¸Â®Ã€Ã¼ Ã€ÃŒÂºÂ¥Ã†Â®
 
 		backCollider->setTag(core::TagIndex::PLATFORM);
 
@@ -166,7 +166,7 @@ bool MainScene::init()
 
 		triggerCollider->setCollisionBitmask(Utils::CreateMask(0));
 
-		triggerCollider->setContactTestBitmask(Utils::CreateMask(core::CategoryBits::PLAYER));  // Äİ¸®Àü ÀÌº¥Æ®
+		triggerCollider->setContactTestBitmask(Utils::CreateMask(core::CategoryBits::PLAYER));  // Ã„ÃÂ¸Â®Ã€Ã¼ Ã€ÃŒÂºÂ¥Ã†Â®
 
 		triggerCollider->setTag(core::TagIndex::TRIGGER_POINT);
 
@@ -196,7 +196,7 @@ bool MainScene::init()
 
 		bossMoveCollider->setCollisionBitmask(Utils::CreateMask(0));
 
-		bossMoveCollider->setContactTestBitmask(Utils::CreateMask(core::CategoryBits::ENEMY));  // Äİ¸®Àü ÀÌº¥Æ®
+		bossMoveCollider->setContactTestBitmask(Utils::CreateMask(core::CategoryBits::ENEMY));  // Ã„ÃÂ¸Â®Ã€Ã¼ Ã€ÃŒÂºÂ¥Ã†Â®
 
 		bossMoveCollider->setTag(core::TagIndex::BOSS_MOVE_POINT);
 
@@ -230,7 +230,7 @@ bool MainScene::init()
 
 		bladeBoundaryCollider->setCollisionBitmask(Utils::CreateMask(0));
 
-		bladeBoundaryCollider->setContactTestBitmask(Utils::CreateMask(core::CategoryBits::ENEMY_PROJECTILE));  // Äİ¸®Àü ÀÌº¥Æ®
+		bladeBoundaryCollider->setContactTestBitmask(Utils::CreateMask(core::CategoryBits::ENEMY_PROJECTILE));  // Ã„ÃÂ¸Â®Ã€Ã¼ Ã€ÃŒÂºÂ¥Ã†Â®
 
 		bladeBoundaryCollider->setTag(core::TagIndex::BLADE_BOUNDARY);
 
@@ -369,30 +369,30 @@ bool MainScene::init()
 	// Init Physics Contact(Collision) Event
 	auto contact = EventListenerPhysicsContact::create();
 
-	// Ãæµ¹ ÀÌº¥Æ® Äİ¹é ÇÔ¼ö ¸ñ·Ï
+	// ÃƒÃ¦ÂµÂ¹ Ã€ÃŒÂºÂ¥Ã†Â® Ã„ÃÂ¹Ã© Ã‡Ã”Â¼Ã¶ Â¸Ã±Â·Ã
 	/*
 		1) onContactBegin
-			- Á¢ÃËÇßÀ» ¶§
+			- ÃÂ¢ÃƒÃ‹Ã‡ÃŸÃ€Â» Â¶Â§
 
 		2) onContactPresolve
-			- Á¢ÃËÇÏ±â Á÷Àü
+			- ÃÂ¢ÃƒÃ‹Ã‡ÃÂ±Ã¢ ÃÃ·Ã€Ã¼
 
 		3) onContactPostSolve
-			- ¶³¾îÁö±â Á÷Àü
+			- Â¶Â³Â¾Ã®ÃÃ¶Â±Ã¢ ÃÃ·Ã€Ã¼
 
 		4) onContactSeparate
-			- ¶³¾îÁú ¶§
+			- Â¶Â³Â¾Ã®ÃÃº Â¶Â§
 	*/
 	contact->onContactBegin = [this](PhysicsContact& contact) -> bool {
-		// Node Å¬·¡½º¸¦ °¡Á®¿À±â
+		// Node Ã…Â¬Â·Â¡Â½ÂºÂ¸Â¦ Â°Â¡ÃÂ®Â¿Ã€Â±Ã¢
 		/*
-			contact : Ãæµ¹ Á¤º¸¸¦ °ü¸®ÇÏ´Â PhysicsContact ÀÎ½ºÅÏ½º
-			getShapeA&B : Ãæµ¹ÇÑ PhysicsShape °¡Á®¿À±â
-			getBody : PhysicsShape¿¡¼­ PhysicsBody °¡Á®¿À±â
-			getNode : PhysicsBody¿¡¼­ ÀÌ Rigidbody°¡ Á¢¸ñµÈ Node¸¦ °¡Á®¿À±â
+			contact : ÃƒÃ¦ÂµÂ¹ ÃÂ¤ÂºÂ¸Â¸Â¦ Â°Ã¼Â¸Â®Ã‡ÃÂ´Ã‚ PhysicsContact Ã€ÃÂ½ÂºÃ…ÃÂ½Âº
+			getShapeA&B : ÃƒÃ¦ÂµÂ¹Ã‡Ã‘ PhysicsShape Â°Â¡ÃÂ®Â¿Ã€Â±Ã¢
+			getBody : PhysicsShapeÂ¿Â¡Â¼Â­ PhysicsBody Â°Â¡ÃÂ®Â¿Ã€Â±Ã¢
+			getNode : PhysicsBodyÂ¿Â¡Â¼Â­ Ã€ÃŒ RigidbodyÂ°Â¡ ÃÂ¢Â¸Ã±ÂµÃˆ NodeÂ¸Â¦ Â°Â¡ÃÂ®Â¿Ã€Â±Ã¢
 		*/
 
-		// nodeA : ÇÇÃæµ¹ / nodeB : Ãæµ¹
+		// nodeA : Ã‡Ã‡ÃƒÃ¦ÂµÂ¹ / nodeB : ÃƒÃ¦ÂµÂ¹
 		auto nodeA = contact.getShapeA()->getBody()->getTag();
 		auto nodeB = contact.getShapeB()->getBody()->getTag();
 		
@@ -1033,7 +1033,7 @@ void MainScene::onEnter()
 {
 	Scene::onEnter();
 
-	// ÀÌº¥Æ® ¸®½º³Ê
+	// Ã€ÃŒÂºÂ¥Ã†Â® Â¸Â®Â½ÂºÂ³ÃŠ
 	_listener = EventListenerKeyboard::create();
 	_listener->onKeyPressed = CC_CALLBACK_2(MainScene::onKeyPressed, this);
 	_listener->onKeyReleased = CC_CALLBACK_2(MainScene::onKeyReleased, this);
@@ -1470,7 +1470,7 @@ void MainScene::onKeyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::E
 void MainScene::onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event)
 {
 	if (hideLogo && readyGame && !isTeleport) {
-		// Å°º¸µå ÀÔ·ÂÀ» ÇØÁ¦ÇÏ±â À§ÇØ¼­´Â XOR ¿¬»êÀÚ(^)¸¦ »ç¿ëÇÔ
+		// Ã…Â°ÂºÂ¸ÂµÃ¥ Ã€Ã”Â·Ã‚Ã€Â» Ã‡Ã˜ÃÂ¦Ã‡ÃÂ±Ã¢ Ã€Â§Ã‡Ã˜Â¼Â­Â´Ã‚ XOR Â¿Â¬Â»ÃªÃ€Ãš(^)Â¸Â¦ Â»Ã§Â¿Ã«Ã‡Ã”
 		switch (keyCode)
 		{
 		case EventKeyboard::KeyCode::KEY_SPACE:
@@ -1586,7 +1586,7 @@ void MainScene::moveAnimState(_moveState state)
 
 		/////////////////////////////////////////////////////////////////////////////////
 
-		// ¿ÜºÎ ÇÁ·Î±×·¥À» »ç¿ëÇÏ¿© ¸¸µç plist ÆÄÀÏ ºÒ·¯¿À±â
+		// Â¿ÃœÂºÃ Ã‡ÃÂ·ÃÂ±Ã—Â·Â¥Ã€Â» Â»Ã§Â¿Ã«Ã‡ÃÂ¿Â© Â¸Â¸ÂµÃ§ plist Ã†Ã„Ã€Ã ÂºÃ’Â·Â¯Â¿Ã€Â±Ã¢
 		auto cache = SpriteFrameCache::getInstance();
 		cache->addSpriteFramesWithFile(sPath);
 
@@ -1595,19 +1595,19 @@ void MainScene::moveAnimState(_moveState state)
 
 		for (int i = 0; i < allSheetNum; i++) {
 			
-			// StringUtils::format => ÁöÁ¤ÇÑ Çü½ÄÀ¸·Î ¹®ÀÚ¿­À» »ı¼º
+			// StringUtils::format => ÃÃ¶ÃÂ¤Ã‡Ã‘ Ã‡Ã¼Â½Ã„Ã€Â¸Â·Ã Â¹Â®Ã€ÃšÂ¿Â­Ã€Â» Â»Ã½Â¼Âº
 			std::string _frames = StringUtils::format("%s%02d.png",sName.c_str(), i);
 			
 
-			// »ı¼ºÇÑ ¹®ÀÚ¿­À» ÀÌ¿ëÇÏ¿© plist ³»ºÎÀÇ SpriteFrame Á¤º¸¸¦ °¡Á®¿È
+			// Â»Ã½Â¼ÂºÃ‡Ã‘ Â¹Â®Ã€ÃšÂ¿Â­Ã€Â» Ã€ÃŒÂ¿Ã«Ã‡ÃÂ¿Â© plist Â³Â»ÂºÃÃ€Ã‡ SpriteFrame ÃÂ¤ÂºÂ¸Â¸Â¦ Â°Â¡ÃÂ®Â¿Ãˆ
 			SpriteFrame* frame = cache->getSpriteFrameByName(_frames);
 			//frame->setAnchorPoint(Vec2(0, 0));
 			frame->getTexture()->setAliasTexParameters();
-			// ¼±º°ÇÑ SpriteFrameÀ» »ğÀÔ
+			// Â¼Â±ÂºÂ°Ã‡Ã‘ SpriteFrameÃ€Â» Â»Ã°Ã€Ã”
 			animFrames.pushBack(frame);
 		}
 
-		// plist ±â¹İÀ¸·Î ¸¸µç SpriteFrame Á¤º¸¸¦ È°¿ëÇÏ¿© ÀÎ½ºÅÏ½º »ı¼º
+		// plist Â±Ã¢Â¹ÃÃ€Â¸Â·Ã Â¸Â¸ÂµÃ§ SpriteFrame ÃÂ¤ÂºÂ¸Â¸Â¦ ÃˆÂ°Â¿Ã«Ã‡ÃÂ¿Â© Ã€ÃÂ½ÂºÃ…ÃÂ½Âº Â»Ã½Â¼Âº
 		
 		auto animation = Animation::createWithSpriteFrames(animFrames, frameDelay);
 		auto animate = Animate::create(animation);
@@ -1717,7 +1717,7 @@ void MainScene::attackAnimState(_attackState state)
 
 		
 		/////////////////////////////////////////////////////////////////////////////////
-		// ¿ÜºÎ ÇÁ·Î±×·¥À» »ç¿ëÇÏ¿© ¸¸µç plist ÆÄÀÏ ºÒ·¯¿À±â
+		// Â¿ÃœÂºÃ Ã‡ÃÂ·ÃÂ±Ã—Â·Â¥Ã€Â» Â»Ã§Â¿Ã«Ã‡ÃÂ¿Â© Â¸Â¸ÂµÃ§ plist Ã†Ã„Ã€Ã ÂºÃ’Â·Â¯Â¿Ã€Â±Ã¢
 		CCLOG(sPath.c_str());
 		auto cache = SpriteFrameCache::getInstance();
 		cache->addSpriteFramesWithFile(sPath);
@@ -1726,18 +1726,18 @@ void MainScene::attackAnimState(_attackState state)
 
 		for (int i = 0; i < allSheetNum; i++) {
 
-			// StringUtils::format => ÁöÁ¤ÇÑ Çü½ÄÀ¸·Î ¹®ÀÚ¿­À» »ı¼º
+			// StringUtils::format => ÃÃ¶ÃÂ¤Ã‡Ã‘ Ã‡Ã¼Â½Ã„Ã€Â¸Â·Ã Â¹Â®Ã€ÃšÂ¿Â­Ã€Â» Â»Ã½Â¼Âº
 			std::string _frames = StringUtils::format("%s%02d.png", sName.c_str(), i);
 
-			// »ı¼ºÇÑ ¹®ÀÚ¿­À» ÀÌ¿ëÇÏ¿© plist ³»ºÎÀÇ SpriteFrame Á¤º¸¸¦ °¡Á®¿È
+			// Â»Ã½Â¼ÂºÃ‡Ã‘ Â¹Â®Ã€ÃšÂ¿Â­Ã€Â» Ã€ÃŒÂ¿Ã«Ã‡ÃÂ¿Â© plist Â³Â»ÂºÃÃ€Ã‡ SpriteFrame ÃÂ¤ÂºÂ¸Â¸Â¦ Â°Â¡ÃÂ®Â¿Ãˆ
 			SpriteFrame* frame = cache->getSpriteFrameByName(_frames);
 			//frame->setAnchorPoint(Vec2(0, 0));
 			frame->getTexture()->setAliasTexParameters();
-			// ¼±º°ÇÑ SpriteFrameÀ» »ğÀÔ
+			// Â¼Â±ÂºÂ°Ã‡Ã‘ SpriteFrameÃ€Â» Â»Ã°Ã€Ã”
 			animFrames.pushBack(frame);
 		}
 		
-		// plist ±â¹İÀ¸·Î ¸¸µç SpriteFrame Á¤º¸¸¦ È°¿ëÇÏ¿© ÀÎ½ºÅÏ½º »ı¼º
+		// plist Â±Ã¢Â¹ÃÃ€Â¸Â·Ã Â¸Â¸ÂµÃ§ SpriteFrame ÃÂ¤ÂºÂ¸Â¸Â¦ ÃˆÂ°Â¿Ã«Ã‡ÃÂ¿Â© Ã€ÃÂ½ÂºÃ…ÃÂ½Âº Â»Ã½Â¼Âº
 		auto atkAnimation = Animation::createWithSpriteFrames(animFrames, frameDelay);
 		//auto atkAnimation = Animation::createWithSpriteFrames(animFrames, frameDelay);
 		atkAnimate = Animate::create(atkAnimation);
@@ -1799,7 +1799,7 @@ void MainScene::bulletParticleAnimState(_bullets state, float x, float y)
 		break;
 	}
 
-	// ¿ÜºÎ ÇÁ·Î±×·¥À» »ç¿ëÇÏ¿© ¸¸µç plist ÆÄÀÏ ºÒ·¯¿À±â
+	// Â¿ÃœÂºÃ Ã‡ÃÂ·ÃÂ±Ã—Â·Â¥Ã€Â» Â»Ã§Â¿Ã«Ã‡ÃÂ¿Â© Â¸Â¸ÂµÃ§ plist Ã†Ã„Ã€Ã ÂºÃ’Â·Â¯Â¿Ã€Â±Ã¢
 	auto cache = SpriteFrameCache::getInstance();
 	cache->addSpriteFramesWithFile(sPath);
 
@@ -1807,17 +1807,17 @@ void MainScene::bulletParticleAnimState(_bullets state, float x, float y)
 
 	for (int i = 0; i < allSheetNum; i++) {
 
-		// StringUtils::format => ÁöÁ¤ÇÑ Çü½ÄÀ¸·Î ¹®ÀÚ¿­À» »ı¼º
+		// StringUtils::format => ÃÃ¶ÃÂ¤Ã‡Ã‘ Ã‡Ã¼Â½Ã„Ã€Â¸Â·Ã Â¹Â®Ã€ÃšÂ¿Â­Ã€Â» Â»Ã½Â¼Âº
 		std::string _frames = StringUtils::format("%s%02d.png", sName.c_str(), i);
 
-		// »ı¼ºÇÑ ¹®ÀÚ¿­À» ÀÌ¿ëÇÏ¿© plist ³»ºÎÀÇ SpriteFrame Á¤º¸¸¦ °¡Á®¿È
+		// Â»Ã½Â¼ÂºÃ‡Ã‘ Â¹Â®Ã€ÃšÂ¿Â­Ã€Â» Ã€ÃŒÂ¿Ã«Ã‡ÃÂ¿Â© plist Â³Â»ÂºÃÃ€Ã‡ SpriteFrame ÃÂ¤ÂºÂ¸Â¸Â¦ Â°Â¡ÃÂ®Â¿Ãˆ
 		SpriteFrame* frame = cache->getSpriteFrameByName(_frames);
 		frame->getTexture()->setAliasTexParameters();
-		// ¼±º°ÇÑ SpriteFrameÀ» »ğÀÔ
+		// Â¼Â±ÂºÂ°Ã‡Ã‘ SpriteFrameÃ€Â» Â»Ã°Ã€Ã”
 		animFrames.pushBack(frame);
 	}
 
-	// plist ±â¹İÀ¸·Î ¸¸µç SpriteFrame Á¤º¸¸¦ È°¿ëÇÏ¿© ÀÎ½ºÅÏ½º »ı¼º
+	// plist Â±Ã¢Â¹ÃÃ€Â¸Â·Ã Â¸Â¸ÂµÃ§ SpriteFrame ÃÂ¤ÂºÂ¸Â¸Â¦ ÃˆÂ°Â¿Ã«Ã‡ÃÂ¿Â© Ã€ÃÂ½ÂºÃ…ÃÂ½Âº Â»Ã½Â¼Âº
 	auto animation = Animation::createWithSpriteFrames(animFrames, frameDelay);
 	//auto atkAnimation = Animation::createWithSpriteFrames(animFrames, frameDelay);
 	auto animate = Animate::create(animation);
@@ -1837,7 +1837,7 @@ void MainScene::bulletParticleAnimState(_bullets state, float x, float y)
 
 void MainScene::readyLogoAnim()
 {
-	// ¿ÜºÎ ÇÁ·Î±×·¥À» »ç¿ëÇÏ¿© ¸¸µç plist ÆÄÀÏ ºÒ·¯¿À±â
+	// Â¿ÃœÂºÃ Ã‡ÃÂ·ÃÂ±Ã—Â·Â¥Ã€Â» Â»Ã§Â¿Ã«Ã‡ÃÂ¿Â© Â¸Â¸ÂµÃ§ plist Ã†Ã„Ã€Ã ÂºÃ’Â·Â¯Â¿Ã€Â±Ã¢
 	auto cache = SpriteFrameCache::getInstance();
 	cache->addSpriteFramesWithFile("Megaman/UI/Ready_Logo.plist");
 
@@ -1848,20 +1848,20 @@ void MainScene::readyLogoAnim()
 
 	for (int i = 0; i < 12; i++) {
 
-		// StringUtils::format => ÁöÁ¤ÇÑ Çü½ÄÀ¸·Î ¹®ÀÚ¿­À» »ı¼º
+		// StringUtils::format => ÃÃ¶ÃÂ¤Ã‡Ã‘ Ã‡Ã¼Â½Ã„Ã€Â¸Â·Ã Â¹Â®Ã€ÃšÂ¿Â­Ã€Â» Â»Ã½Â¼Âº
 		
 		std::string _frames = StringUtils::format("ready_%02d.png", i);
 
-		// »ı¼ºÇÑ ¹®ÀÚ¿­À» ÀÌ¿ëÇÏ¿© plist ³»ºÎÀÇ SpriteFrame Á¤º¸¸¦ °¡Á®¿È
+		// Â»Ã½Â¼ÂºÃ‡Ã‘ Â¹Â®Ã€ÃšÂ¿Â­Ã€Â» Ã€ÃŒÂ¿Ã«Ã‡ÃÂ¿Â© plist Â³Â»ÂºÃÃ€Ã‡ SpriteFrame ÃÂ¤ÂºÂ¸Â¸Â¦ Â°Â¡ÃÂ®Â¿Ãˆ
 		SpriteFrame* frame = cache->getSpriteFrameByName(_frames);
 		//frame->setAnchorPoint(Vec2(0, 0));
 		frame->getTexture()->setAliasTexParameters();
-		// ¼±º°ÇÑ SpriteFrameÀ» »ğÀÔ
+		// Â¼Â±ÂºÂ°Ã‡Ã‘ SpriteFrameÃ€Â» Â»Ã°Ã€Ã”
 		animFrames.pushBack(frame);
 	}
 
 	CCLOG("Ready Logo Animation Start");
-	// plist ±â¹İÀ¸·Î ¸¸µç SpriteFrame Á¤º¸¸¦ È°¿ëÇÏ¿© ÀÎ½ºÅÏ½º »ı¼º
+	// plist Â±Ã¢Â¹ÃÃ€Â¸Â·Ã Â¸Â¸ÂµÃ§ SpriteFrame ÃÂ¤ÂºÂ¸Â¸Â¦ ÃˆÂ°Â¿Ã«Ã‡ÃÂ¿Â© Ã€ÃÂ½ÂºÃ…ÃÂ½Âº Â»Ã½Â¼Âº
 	auto animation = Animation::createWithSpriteFrames(animFrames, 0.075);
 	
 	auto animate = Animate::create(animation);
@@ -1887,37 +1887,37 @@ cocos2d::Vec2 MainScene::getPlayerWorldPos()
 
 void MainScene::createMyPhysicsWorld()
 {
-	// ½ºÅ©¸° ¹Ù¿î´õ¸® (Screen Boundary)¸¦ ¼³Á¤ (¿©±â¼­´Â È­¸é ÀüÃ¼·Î ¼³Á¤)
+	// Â½ÂºÃ…Â©Â¸Â° Â¹Ã™Â¿Ã®Â´ÃµÂ¸Â® (Screen Boundary)Â¸Â¦ Â¼Â³ÃÂ¤ (Â¿Â©Â±Ã¢Â¼Â­Â´Ã‚ ÃˆÂ­Â¸Ã© Ã€Ã¼ÃƒÂ¼Â·Ã Â¼Â³ÃÂ¤)
 	auto visibleSize = _director->getVisibleSize();
 
-	// Áß·ÂÀÌ Àû¿ëµÇ´Â ¹üÀ§ÀÇ ¼¼±â¸¦ ¼³Á¤
+	// ÃÃŸÂ·Ã‚Ã€ÃŒ Ã€Ã»Â¿Ã«ÂµÃ‡Â´Ã‚ Â¹Ã¼Ã€Â§Ã€Ã‡ Â¼Â¼Â±Ã¢Â¸Â¦ Â¼Â³ÃÂ¤
 	//Vect gravity = Vect(0.0f, -128.0f);
 	Vect gravity = Vect(0.0f, -300.0f);
 
-	// ÇöÀç SceneÀÇ PhysicsWorld Á¤º¸¸¦ ¹Ş¾Æ¿À±â
+	// Ã‡Ã¶Ã€Ã§ SceneÃ€Ã‡ PhysicsWorld ÃÂ¤ÂºÂ¸Â¸Â¦ Â¹ÃÂ¾Ã†Â¿Ã€Â±Ã¢
 	m_world = this->getPhysicsWorld();
 
-	// setDebugDrawMask() : °´Ã¼ÀÇ ÆÇÁ¤ ¹Ú½º¸¦ Ç¥½Ã
+	// setDebugDrawMask() : Â°Â´ÃƒÂ¼Ã€Ã‡ Ã†Ã‡ÃÂ¤ Â¹ÃšÂ½ÂºÂ¸Â¦ Ã‡Â¥Â½Ãƒ
 	//m_world->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
 
-	// setGravity() : Áß·ÂÀÇ ¹æÇâ°ú ¼¼±â¸¦ ¼³Á¤
-	// Áß·ÂÀ» ¼³Á¤ÇÏÁö ¾ÊÀ» °æ¿ì ±âº»°ªÀº Vect(0.0f, -98.0f)
+	// setGravity() : ÃÃŸÂ·Ã‚Ã€Ã‡ Â¹Ã¦Ã‡Ã¢Â°Ãº Â¼Â¼Â±Ã¢Â¸Â¦ Â¼Â³ÃÂ¤
+	// ÃÃŸÂ·Ã‚Ã€Â» Â¼Â³ÃÂ¤Ã‡ÃÃÃ¶ Â¾ÃŠÃ€Â» Â°Ã¦Â¿Ã¬ Â±Ã¢ÂºÂ»Â°ÂªÃ€Âº Vect(0.0f, -98.0f)
 	m_world->setGravity(gravity);
 
-	// setSpeed() : ³«ÇÏ¿¡ µû¸¥ Áß·Â°¡¼Óµµ¸¦ ¼³Á¤ (±âº»°ªÀº 1.0f)
+	// setSpeed() : Â³Â«Ã‡ÃÂ¿Â¡ ÂµÃ»Â¸Â¥ ÃÃŸÂ·Ã‚Â°Â¡Â¼Ã“ÂµÂµÂ¸Â¦ Â¼Â³ÃÂ¤ (Â±Ã¢ÂºÂ»Â°ÂªÃ€Âº 1.0f)
 	m_world->setSpeed(2.0f);
 
-	// setSubsteps() : ÇÁ·¹ÀÓ °£¿¡ ½Ç½ÃÇÏ´Â ¹°¸® ¿¬»êÀÇ È½¼ö¸¦ Á¶Á¤
-	// ±âº»°ªÀº 1
+	// setSubsteps() : Ã‡ÃÂ·Â¹Ã€Ã“ Â°Â£Â¿Â¡ Â½Ã‡Â½ÃƒÃ‡ÃÂ´Ã‚ Â¹Â°Â¸Â® Â¿Â¬Â»ÃªÃ€Ã‡ ÃˆÂ½Â¼Ã¶Â¸Â¦ ÃÂ¶ÃÂ¤
+	// Â±Ã¢ÂºÂ»Â°ÂªÃ€Âº 1
 	m_world->setSubsteps(60);
 	
 	////////////////////////////////////////////////////////
 
-	// °­Ã¼ (Rigidbody) »ı¼º (¹°¸® ¿¬»êÀÌ °¡´ÉÇÑ °´Ã¼ »ı¼º)
+	// Â°Â­ÃƒÂ¼ (Rigidbody) Â»Ã½Â¼Âº (Â¹Â°Â¸Â® Â¿Â¬Â»ÃªÃ€ÃŒ Â°Â¡Â´Ã‰Ã‡Ã‘ Â°Â´ÃƒÂ¼ Â»Ã½Â¼Âº)
 	// PhysicsBody::createEdgeBox
-	// Á¦1ÀÎ¼ö : ¹°¸® ½Ã¹Ä·¹ÀÌ¼ÇÀÌ Àû¿ëµÉ ¹üÀ§¸¦ ¼³Á¤
-	// Á¦2ÀÎ¼ö : ¹°Ã¼ÀÇ ¹Ğµµ, ¹İ¹ß°è¼ö, ¸¶Âû°è¼ö ¼³Á¤
-	// Á¦3ÀÎ¼ö : setDebugDrawMask°¡ ±×¸®´Â ¼±ÀÇ µÎ²²¸¦ ¼³Á¤ (¼± µÎ²²¿Í ÆÇÁ¤Àº »ó°ü ¾øÀ½)
+	// ÃÂ¦1Ã€ÃÂ¼Ã¶ : Â¹Â°Â¸Â® Â½ÃƒÂ¹Ã„Â·Â¹Ã€ÃŒÂ¼Ã‡Ã€ÃŒ Ã€Ã»Â¿Ã«ÂµÃ‰ Â¹Ã¼Ã€Â§Â¸Â¦ Â¼Â³ÃÂ¤
+	// ÃÂ¦2Ã€ÃÂ¼Ã¶ : Â¹Â°ÃƒÂ¼Ã€Ã‡ Â¹ÃÂµÂµ, Â¹ÃÂ¹ÃŸÂ°Ã¨Â¼Ã¶, Â¸Â¶Ã‚Ã»Â°Ã¨Â¼Ã¶ Â¼Â³ÃÂ¤
+	// ÃÂ¦3Ã€ÃÂ¼Ã¶ : setDebugDrawMaskÂ°Â¡ Â±Ã—Â¸Â®Â´Ã‚ Â¼Â±Ã€Ã‡ ÂµÃÂ²Â²Â¸Â¦ Â¼Â³ÃÂ¤ (Â¼Â± ÂµÃÂ²Â²Â¿Ã Ã†Ã‡ÃÂ¤Ã€Âº Â»Ã³Â°Ã¼ Â¾Ã¸Ã€Â½)
 	auto body = PhysicsBody::createEdgeBox(visibleSize, PHYSICSBODY_MATERIAL_DEFAULT, 1);
 	body->setCategoryBitmask(Utils::CreateMask(core::CategoryBits::BOUNDARY));
 	body->setCollisionBitmask(Utils::CreateMask(core::CategoryBits::PLAYER
@@ -1927,13 +1927,13 @@ void MainScene::createMyPhysicsWorld()
 											, core::CategoryBits::ENEMY_PROJECTILE));
 	body->setTag(core::TagIndex::BOUNDARY);
 
-	// ¹°¸® ½Ã¹Ä·¹ÀÌ¼Ç Àû¿ëÀ» À§ÇØ ÃÖ»óÀ§ Å¬·¡½ºÀÎ Node·Î ÀÎ½ºÅÏ½º »ı¼º
+	// Â¹Â°Â¸Â® Â½ÃƒÂ¹Ã„Â·Â¹Ã€ÃŒÂ¼Ã‡ Ã€Ã»Â¿Ã«Ã€Â» Ã€Â§Ã‡Ã˜ ÃƒÃ–Â»Ã³Ã€Â§ Ã…Â¬Â·Â¡Â½ÂºÃ€Ã NodeÂ·Ã Ã€ÃÂ½ÂºÃ…ÃÂ½Âº Â»Ã½Â¼Âº
 	auto edgeNode = Node::create();
 
-	// Physics Àû¿ë À§Ä¡ Á¶Á¤ (Áß°£À» ±âÁØÀ¸·Î ¿Å°ÜÁÜ)
+	// Physics Ã€Ã»Â¿Ã« Ã€Â§Ã„Â¡ ÃÂ¶ÃÂ¤ (ÃÃŸÂ°Â£Ã€Â» Â±Ã¢ÃÃ˜Ã€Â¸Â·Ã Â¿Ã…Â°ÃœÃÃœ)
 	edgeNode->setPosition(Vec2(visibleSize) * 0.5f);
 
-	// °­Ã¼ Àû¿ë
+	// Â°Â­ÃƒÂ¼ Ã€Ã»Â¿Ã«
 	edgeNode->setPhysicsBody(body);
 	this->addChild(edgeNode);
 }
@@ -1980,7 +1980,7 @@ void MainScene::playTeleportSound()
 
 void MainScene::playerDie()
 {
-	int allSheetNum = 9;
+	int allSheetNum = 2;
 	std::string sPath = "Megaman/Particle/Particle_Explosion.plist";
 	std::string sName = "explosion_";
 	float frameDelay = 0.07f;
@@ -2000,17 +2000,17 @@ void MainScene::playerDie()
 
 	for (int i = 0; i < allSheetNum; i++) {
 
-		// StringUtils::format => ÁöÁ¤ÇÑ Çü½ÄÀ¸·Î ¹®ÀÚ¿­À» »ı¼º
+		// StringUtils::format => ÃÃ¶ÃÂ¤Ã‡Ã‘ Ã‡Ã¼Â½Ã„Ã€Â¸Â·Ã Â¹Â®Ã€ÃšÂ¿Â­Ã€Â» Â»Ã½Â¼Âº
 		std::string _frames = StringUtils::format("%s%02d.png", sName.c_str(), i);
 
-		// »ı¼ºÇÑ ¹®ÀÚ¿­À» ÀÌ¿ëÇÏ¿© plist ³»ºÎÀÇ SpriteFrame Á¤º¸¸¦ °¡Á®¿È
+		// Â»Ã½Â¼ÂºÃ‡Ã‘ Â¹Â®Ã€ÃšÂ¿Â­Ã€Â» Ã€ÃŒÂ¿Ã«Ã‡ÃÂ¿Â© plist Â³Â»ÂºÃÃ€Ã‡ SpriteFrame ÃÂ¤ÂºÂ¸Â¸Â¦ Â°Â¡ÃÂ®Â¿Ãˆ
 		SpriteFrame* frame = cache->getSpriteFrameByName(_frames);
 		frame->getTexture()->setAliasTexParameters();
 
 		animFrames.pushBack(frame);
 	}
 
-	// plist ±â¹İÀ¸·Î ¸¸µç SpriteFrame Á¤º¸¸¦ È°¿ëÇÏ¿© ÀÎ½ºÅÏ½º »ı¼º
+	// plist Â±Ã¢Â¹ÃÃ€Â¸Â·Ã Â¸Â¸ÂµÃ§ SpriteFrame ÃÂ¤ÂºÂ¸Â¸Â¦ ÃˆÂ°Â¿Ã«Ã‡ÃÂ¿Â© Ã€ÃÂ½ÂºÃ…ÃÂ½Âº Â»Ã½Â¼Âº
 
 	auto animation = Animation::createWithSpriteFrames(animFrames, frameDelay);
 	auto animate = Animate::create(animation);
@@ -2091,6 +2091,174 @@ void MainScene::replaceEndScene()
 	_director->replaceScene(TransitionFade::create(2.0f, ReplaceEndSceneHelper::createScene()));
 }
 
+//void MainScene::createBullet(_bullets state)
+//{
+//	int allSheetNum;
+//	std::string sPath;
+//	std::string sName;
+//	Size size;
+//	float frameDelay;
+//
+//	switch (state)
+//	{
+//	case COMMON_BULLET:
+//		allSheetNum = 3;
+//		sPath = "Megaman/Weapon/Weapon_Bullet.png";
+//		sName = "shooting_";
+//		size = Size(10.0f, 9.0f);
+//		break;
+//
+//	case CHARGE_X1:
+//		allSheetNum = 4;
+//		sPath = "Megaman/Weapon/Charge_X1_Bullet.plist";
+//		sName = "charge_x1_bullet_";
+//		frameDelay = 0.05f;
+//		size = Size(22.0f, 15.0f);
+//		break;
+//
+//	case CHARGE_X2:
+//		allSheetNum = 6;
+//		sPath = "Megaman/Weapon/Charge_X2_Bullet.plist";
+//		sName = "charge_x2_bullet_";
+//		frameDelay = 0.05f;
+//		size = Size(33.0f, 27.0f);
+//
+//		break;
+//
+//	}
+//
+//	// Ã…ÂºÃˆÂ¯ Â»Ã½Â¼Âº
+//	auto pBullet = new Sprite();
+//	Sprite* pBulletVisual = nullptr;
+//	auto bulletPBody = PhysicsBody::createBox(size, PHYSICSBODY_MATERIAL_DEFAULT);
+//	bulletPBody->setGravityEnable(false);
+//
+//	if (state == COMMON_BULLET) {
+//		pBullet = Sprite::create(sPath);
+//		pBullet->setPosition(shootPosition);
+//		bulletPBody->setTag(core::TagIndex::COMMON_BULLET);
+//		/*bulletPBody = PhysicsBody::createBox(size, PHYSICSBODY_MATERIAL_DEFAULT);
+//		bulletPBody->setGravityEnable(false);
+//		bulletPBody->setCategoryBitmask(3);
+//		bulletPBody->setContactTestBitmask(1 || 4);
+//		bulletPBody->setCollisionBitmask(1);
+//		bulletPBody->setGroup(-1);
+//		bulletPBody->setTag(10);
+//		pBullet->setPhysicsBody(bulletPBody);*/
+//		soundManager->PlayAttackEffect(soundManager->bulletPath);
+//	}
+//
+//	else if (state == CHARGE_X1 || state == CHARGE_X2) {
+//		// Â¿ÃœÂºÃ Ã‡ÃÂ·ÃÂ±Ã—Â·Â¥Ã€Â» Â»Ã§Â¿Ã«Ã‡ÃÂ¿Â© Â¸Â¸ÂµÃ§ plist Ã†Ã„Ã€Ã ÂºÃ’Â·Â¯Â¿Ã€Â±Ã¢
+//		auto cache = SpriteFrameCache::getInstance();
+//		cache->addSpriteFramesWithFile(sPath);
+//
+//		// cocos2d::Vector
+//		//Vector<AnimationFrame*> animFrames;
+//		Vector<SpriteFrame*> animFrames;
+//		//ValueMap myValueMap;
+//
+//		for (int i = 0; i < allSheetNum; i++) {
+//
+//			// StringUtils::format => ÃÃ¶ÃÂ¤Ã‡Ã‘ Ã‡Ã¼Â½Ã„Ã€Â¸Â·Ã Â¹Â®Ã€ÃšÂ¿Â­Ã€Â» Â»Ã½Â¼Âº
+//			std::string _frames = StringUtils::format("%s%02d.png", sName.c_str(), i);
+//			//myValueMap.insert(std::pair<std::string, Value>("position", ValueVector(Value(1.0f), Value(2.0f))));
+//
+//			// Â»Ã½Â¼ÂºÃ‡Ã‘ Â¹Â®Ã€ÃšÂ¿Â­Ã€Â» Ã€ÃŒÂ¿Ã«Ã‡ÃÂ¿Â© plist Â³Â»ÂºÃÃ€Ã‡ SpriteFrame ÃÂ¤ÂºÂ¸Â¸Â¦ Â°Â¡ÃÂ®Â¿Ãˆ
+//			SpriteFrame* frame = cache->getSpriteFrameByName(_frames);
+//			//frame->setAnchorPoint(Vec2(0.0f, 0.0f));
+//			frame->getTexture()->setAliasTexParameters();
+//			// Â¼Â±ÂºÂ°Ã‡Ã‘ SpriteFrameÃ€Â» Â»Ã°Ã€Ã”
+//			//animFrames.pushBack(AnimationFrame::create(cache->getSpriteFrameByName(_frames), 1, myValueMap));
+//			animFrames.pushBack(frame);
+//		}
+//
+//		// plist Â±Ã¢Â¹ÃÃ€Â¸Â·Ã Â¸Â¸ÂµÃ§ SpriteFrame ÃÂ¤ÂºÂ¸Â¸Â¦ ÃˆÂ°Â¿Ã«Ã‡ÃÂ¿Â© Ã€ÃÂ½ÂºÃ…ÃÂ½Âº Â»Ã½Â¼Âº
+//		auto Animation = Animation::createWithSpriteFrames(animFrames, frameDelay);
+//		//auto atkAnimation = Animation::createWithSpriteFrames(animFrames, frameDelay);
+//		auto bulletAnim = Animate::create(Animation);
+//		bulletAnim->retain();
+//
+//
+//		pBulletVisual = Sprite::create();
+//		pBulletVisual->runAction(RepeatForever::create(bulletAnim));
+//		pBulletVisual->setAnchorPoint(Vec2(0.5f, 0.5f));
+//
+//
+//		pBullet = Sprite::create();
+//		pBullet->setContentSize(size);
+//		pBullet->setAnchorPoint(Vec2(0.5f, 0.5f));
+//		pBullet->setPosition(shootPosition);
+//
+//		pBulletVisual->setPosition(Vec2(size.width * 0.5f, size.height * 0.5f));
+//		pBullet->addChild(pBulletVisual);
+//		if (state == CHARGE_X1) {
+//			bulletPBody->setTag(core::TagIndex::CHARGE_X1);
+//			soundManager->PlayAttackEffect(soundManager->chargeX1Path);
+//		}
+//
+//		else if (state == CHARGE_X2) {
+//			bulletPBody->setTag(core::TagIndex::CHARGE_X2);
+//			soundManager->PlayAttackEffect(soundManager->chargeX2Path);
+//		}
+//
+//		/*bulletPBody = PhysicsBody::createBox(size, PHYSICSBODY_MATERIAL_DEFAULT);
+//		bulletPBody->setGravityEnable(false);
+//		bulletPBody->setCategoryBitmask(3);
+//		bulletPBody->setContactTestBitmask(1 || 2 || 3);
+//		bulletPBody->setGroup(-1);
+//		bulletPBody->setCollisionBitmask(1);
+//		bulletPBody->setTag(10);
+//
+//		pBullet->setPhysicsBody(bulletPBody);*/
+//		//pBullet->runAction(bulletAnim);
+//	}
+//
+//	bulletPBody->setCategoryBitmask(Utils::CreateMask(core::CategoryBits::PLAYER_PROJECTILE));
+//	bulletPBody->setCollisionBitmask(0);
+//	bulletPBody->setContactTestBitmask(Utils::CreateMask(core::CategoryBits::BOUNDARY
+//		//, core::CategoryBits::PLATFORM
+//		, core::CategoryBits::ENEMY));
+//
+//	pBullet->setPhysicsBody(bulletPBody);
+//
+//	//bulletSprite->setPosition(shootPosition);
+//
+//	/*auto callback = CallFunc::create([&]() {
+//			bulletSprite->setVisible(false);
+//			bulletSprite->removeAllChildrenWithCleanup(true);
+//		});
+//	auto seq = Sequence::create(fireParticle, callback, nullptr);
+//	bulletSprite->runAction(seq);
+//	this->addChild(bulletSprite);*/
+//
+//	this->addChild(pBullet);
+//	if (character->isFlippedX()) {
+//		// If pBulletVisual exists, it's a charge bullet. Flip the visual child.
+//		if (pBulletVisual != nullptr) {
+//			pBulletVisual->setFlippedX(true);
+//		}
+//		// Otherwise, it's a common bullet. Flip the main sprite.
+//		else {
+//			pBullet->setFlippedX(true);
+//		}
+//		bulletPBody->setVelocity(Vec2(-175.0f, 0.0f));
+//	}
+//	else {
+//		// If pBulletVisual exists, it's a charge bullet.
+//		if (pBulletVisual != nullptr) {
+//			pBulletVisual->setFlippedX(false);
+//		}
+//		// Otherwise, it's a common bullet.
+//		else {
+//			pBullet->setFlippedX(false);
+//		}
+//		bulletPBody->setVelocity(Vec2(175.0f, 0.0f));
+//	}
+//}
+
+
+
 void MainScene::createBullet(_bullets state)
 {
 	int allSheetNum;
@@ -2127,9 +2295,8 @@ void MainScene::createBullet(_bullets state)
 
 	}
 
-	// ÅºÈ¯ »ı¼º
+	// íƒ„í™˜ ìƒì„±
 	auto pBullet = new Sprite();
-	Sprite* pBulletVisual = nullptr;
 	auto bulletPBody = PhysicsBody::createBox(size, PHYSICSBODY_MATERIAL_DEFAULT);
 	bulletPBody->setGravityEnable(false);
 
@@ -2137,61 +2304,42 @@ void MainScene::createBullet(_bullets state)
 		pBullet = Sprite::create(sPath);
 		pBullet->setPosition(shootPosition);
 		bulletPBody->setTag(core::TagIndex::COMMON_BULLET);
-		/*bulletPBody = PhysicsBody::createBox(size, PHYSICSBODY_MATERIAL_DEFAULT);
-		bulletPBody->setGravityEnable(false);
-		bulletPBody->setCategoryBitmask(3);
-		bulletPBody->setContactTestBitmask(1 || 4);
-		bulletPBody->setCollisionBitmask(1);
-		bulletPBody->setGroup(-1);
-		bulletPBody->setTag(10);
-		pBullet->setPhysicsBody(bulletPBody);*/
 		soundManager->PlayAttackEffect(soundManager->bulletPath);
 	}
 
 	else if (state == CHARGE_X1 || state == CHARGE_X2) {
-		// ¿ÜºÎ ÇÁ·Î±×·¥À» »ç¿ëÇÏ¿© ¸¸µç plist ÆÄÀÏ ºÒ·¯¿À±â
+		// ì™¸ë¶€ í”„ë¡œê·¸ë¨ì„ ì‚¬ìš©í•˜ì—¬ ë§Œë“  plist íŒŒì¼ ë¶ˆëŸ¬ì˜¤ê¸°
 		auto cache = SpriteFrameCache::getInstance();
 		cache->addSpriteFramesWithFile(sPath);
 
-		// cocos2d::Vector
-		//Vector<AnimationFrame*> animFrames;
 		Vector<SpriteFrame*> animFrames;
-		//ValueMap myValueMap;
 
 		for (int i = 0; i < allSheetNum; i++) {
 
-			// StringUtils::format => ÁöÁ¤ÇÑ Çü½ÄÀ¸·Î ¹®ÀÚ¿­À» »ı¼º
+			// StringUtils::format => ì§€ì •í•œ í˜•ì‹ìœ¼ë¡œ ë¬¸ìì—´ì„ ìƒì„±
 			std::string _frames = StringUtils::format("%s%02d.png", sName.c_str(), i);
 			//myValueMap.insert(std::pair<std::string, Value>("position", ValueVector(Value(1.0f), Value(2.0f))));
 
-			// »ı¼ºÇÑ ¹®ÀÚ¿­À» ÀÌ¿ëÇÏ¿© plist ³»ºÎÀÇ SpriteFrame Á¤º¸¸¦ °¡Á®¿È
+			// ìƒì„±í•œ ë¬¸ìì—´ì„ ì´ìš©í•˜ì—¬ plist ë‚´ë¶€ì˜ SpriteFrame ì •ë³´ë¥¼ ê°€ì ¸ì˜´
 			SpriteFrame* frame = cache->getSpriteFrameByName(_frames);
 			//frame->setAnchorPoint(Vec2(0.0f, 0.0f));
 			frame->getTexture()->setAliasTexParameters();
-			// ¼±º°ÇÑ SpriteFrameÀ» »ğÀÔ
+			// ì„ ë³„í•œ SpriteFrameì„ ì‚½ì…
 			//animFrames.pushBack(AnimationFrame::create(cache->getSpriteFrameByName(_frames), 1, myValueMap));
 			animFrames.pushBack(frame);
 		}
 
-		// plist ±â¹İÀ¸·Î ¸¸µç SpriteFrame Á¤º¸¸¦ È°¿ëÇÏ¿© ÀÎ½ºÅÏ½º »ı¼º
+		// plist ê¸°ë°˜ìœ¼ë¡œ ë§Œë“  SpriteFrame ì •ë³´ë¥¼ í™œìš©í•˜ì—¬ ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
 		auto Animation = Animation::createWithSpriteFrames(animFrames, frameDelay);
 		//auto atkAnimation = Animation::createWithSpriteFrames(animFrames, frameDelay);
 		auto bulletAnim = Animate::create(Animation);
 		bulletAnim->retain();
 
 
-		pBulletVisual = Sprite::create();
-		pBulletVisual->runAction(RepeatForever::create(bulletAnim));
-		pBulletVisual->setAnchorPoint(Vec2(0.5f, 0.5f));
 
-
-		pBullet = Sprite::create();
-		pBullet->setContentSize(size);
-		pBullet->setAnchorPoint(Vec2(0.5f, 0.5f));
+		pBullet = Sprite::create("Placeholder.png");
 		pBullet->setPosition(shootPosition);
 
-		pBulletVisual->setPosition(Vec2(size.width * 0.5f, size.height * 0.5f));
-		pBullet->addChild(pBulletVisual);
 		if (state == CHARGE_X1) {
 			bulletPBody->setTag(core::TagIndex::CHARGE_X1);
 			soundManager->PlayAttackEffect(soundManager->chargeX1Path);
@@ -2202,16 +2350,7 @@ void MainScene::createBullet(_bullets state)
 			soundManager->PlayAttackEffect(soundManager->chargeX2Path);
 		}
 
-		/*bulletPBody = PhysicsBody::createBox(size, PHYSICSBODY_MATERIAL_DEFAULT);
-		bulletPBody->setGravityEnable(false);
-		bulletPBody->setCategoryBitmask(3);
-		bulletPBody->setContactTestBitmask(1 || 2 || 3);
-		bulletPBody->setGroup(-1);
-		bulletPBody->setCollisionBitmask(1);
-		bulletPBody->setTag(10);
-
-		pBullet->setPhysicsBody(bulletPBody);*/
-		//pBullet->runAction(bulletAnim);
+		pBullet->runAction(bulletAnim);
 	}
 
 	bulletPBody->setCategoryBitmask(Utils::CreateMask(core::CategoryBits::PLAYER_PROJECTILE));
@@ -2222,42 +2361,19 @@ void MainScene::createBullet(_bullets state)
 
 	pBullet->setPhysicsBody(bulletPBody);
 
-	//bulletSprite->setPosition(shootPosition);
+	wlayer->addChild(pBullet);
 
-	/*auto callback = CallFunc::create([&]() {
-			bulletSprite->setVisible(false);
-			bulletSprite->removeAllChildrenWithCleanup(true);
-		});
-	auto seq = Sequence::create(fireParticle, callback, nullptr);
-	bulletSprite->runAction(seq);
-	this->addChild(bulletSprite);*/
-
-	this->addChild(pBullet);
+	// ì•¡ì…˜ ì ìš©
 	if (character->isFlippedX()) {
-		// If pBulletVisual exists, it's a charge bullet. Flip the visual child.
-		if (pBulletVisual != nullptr) {
-			pBulletVisual->setFlippedX(true);
-		}
-		// Otherwise, it's a common bullet. Flip the main sprite.
-		else {
-			pBullet->setFlippedX(true);
-		}
+		pBullet->setFlippedX(true);
 		bulletPBody->setVelocity(Vec2(-175.0f, 0.0f));
 	}
+
 	else {
-		// If pBulletVisual exists, it's a charge bullet.
-		if (pBulletVisual != nullptr) {
-			pBulletVisual->setFlippedX(false);
-		}
-		// Otherwise, it's a common bullet.
-		else {
-			pBullet->setFlippedX(false);
-		}
+		pBullet->setFlippedX(false);
 		bulletPBody->setVelocity(Vec2(175.0f, 0.0f));
 	}
 }
-
-
 
 
 
