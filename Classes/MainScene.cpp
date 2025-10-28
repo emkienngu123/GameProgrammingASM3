@@ -2115,7 +2115,7 @@ void MainScene::createBullet(_bullets state)
 		frameDelay = 0.05f;
 		size = Size(22.0f, 15.0f);
 		break;
-		
+
 	case CHARGE_X2:
 		allSheetNum = 6;
 		sPath = "Megaman/Weapon/Charge_X2_Bullet.plist";
@@ -2124,11 +2124,12 @@ void MainScene::createBullet(_bullets state)
 		size = Size(33.0f, 27.0f);
 
 		break;
-	
+
 	}
 
 	// 藕券 积己
 	auto pBullet = new Sprite();
+	Sprite* pBulletVisual = nullptr;
 	auto bulletPBody = PhysicsBody::createBox(size, PHYSICSBODY_MATERIAL_DEFAULT);
 	bulletPBody->setGravityEnable(false);
 
@@ -2136,6 +2137,14 @@ void MainScene::createBullet(_bullets state)
 		pBullet = Sprite::create(sPath);
 		pBullet->setPosition(shootPosition);
 		bulletPBody->setTag(core::TagIndex::COMMON_BULLET);
+		/*bulletPBody = PhysicsBody::createBox(size, PHYSICSBODY_MATERIAL_DEFAULT);
+		bulletPBody->setGravityEnable(false);
+		bulletPBody->setCategoryBitmask(3);
+		bulletPBody->setContactTestBitmask(1 || 4);
+		bulletPBody->setCollisionBitmask(1);
+		bulletPBody->setGroup(-1);
+		bulletPBody->setTag(10);
+		pBullet->setPhysicsBody(bulletPBody);*/
 		soundManager->PlayAttackEffect(soundManager->bulletPath);
 	}
 
@@ -2144,7 +2153,10 @@ void MainScene::createBullet(_bullets state)
 		auto cache = SpriteFrameCache::getInstance();
 		cache->addSpriteFramesWithFile(sPath);
 
+		// cocos2d::Vector
+		//Vector<AnimationFrame*> animFrames;
 		Vector<SpriteFrame*> animFrames;
+		//ValueMap myValueMap;
 
 		for (int i = 0; i < allSheetNum; i++) {
 
@@ -2167,11 +2179,19 @@ void MainScene::createBullet(_bullets state)
 		auto bulletAnim = Animate::create(Animation);
 		bulletAnim->retain();
 
-		
 
-		pBullet = Sprite::create("Placeholder.png");
+		pBulletVisual = Sprite::create();
+		pBulletVisual->runAction(RepeatForever::create(bulletAnim));
+		pBulletVisual->setAnchorPoint(Vec2(0.5f, 0.5f));
+
+
+		pBullet = Sprite::create();
+		pBullet->setContentSize(size);
+		pBullet->setAnchorPoint(Vec2(0.5f, 0.5f));
 		pBullet->setPosition(shootPosition);
-		
+
+		pBulletVisual->setPosition(Vec2(size.width * 0.5f, size.height * 0.5f));
+		pBullet->addChild(pBulletVisual);
 		if (state == CHARGE_X1) {
 			bulletPBody->setTag(core::TagIndex::CHARGE_X1);
 			soundManager->PlayAttackEffect(soundManager->chargeX1Path);
@@ -2181,32 +2201,61 @@ void MainScene::createBullet(_bullets state)
 			bulletPBody->setTag(core::TagIndex::CHARGE_X2);
 			soundManager->PlayAttackEffect(soundManager->chargeX2Path);
 		}
-			
-		pBullet->runAction(bulletAnim);
+
+		/*bulletPBody = PhysicsBody::createBox(size, PHYSICSBODY_MATERIAL_DEFAULT);
+		bulletPBody->setGravityEnable(false);
+		bulletPBody->setCategoryBitmask(3);
+		bulletPBody->setContactTestBitmask(1 || 2 || 3);
+		bulletPBody->setGroup(-1);
+		bulletPBody->setCollisionBitmask(1);
+		bulletPBody->setTag(10);
+
+		pBullet->setPhysicsBody(bulletPBody);*/
+		//pBullet->runAction(bulletAnim);
 	}
-	
+
 	bulletPBody->setCategoryBitmask(Utils::CreateMask(core::CategoryBits::PLAYER_PROJECTILE));
 	bulletPBody->setCollisionBitmask(0);
 	bulletPBody->setContactTestBitmask(Utils::CreateMask(core::CategoryBits::BOUNDARY
-														//, core::CategoryBits::PLATFORM
-														, core::CategoryBits::ENEMY));
+		//, core::CategoryBits::PLATFORM
+		, core::CategoryBits::ENEMY));
 
 	pBullet->setPhysicsBody(bulletPBody);
-	
-	wlayer->addChild(pBullet);
 
-	// 咀记 利侩
+	//bulletSprite->setPosition(shootPosition);
+
+	/*auto callback = CallFunc::create([&]() {
+			bulletSprite->setVisible(false);
+			bulletSprite->removeAllChildrenWithCleanup(true);
+		});
+	auto seq = Sequence::create(fireParticle, callback, nullptr);
+	bulletSprite->runAction(seq);
+	this->addChild(bulletSprite);*/
+
+	this->addChild(pBullet);
 	if (character->isFlippedX()) {
-		pBullet->setFlippedX(true);
+		// If pBulletVisual exists, it's a charge bullet. Flip the visual child.
+		if (pBulletVisual != nullptr) {
+			pBulletVisual->setFlippedX(true);
+		}
+		// Otherwise, it's a common bullet. Flip the main sprite.
+		else {
+			pBullet->setFlippedX(true);
+		}
 		bulletPBody->setVelocity(Vec2(-175.0f, 0.0f));
 	}
-		
 	else {
-		pBullet->setFlippedX(false);
+		// If pBulletVisual exists, it's a charge bullet.
+		if (pBulletVisual != nullptr) {
+			pBulletVisual->setFlippedX(false);
+		}
+		// Otherwise, it's a common bullet.
+		else {
+			pBullet->setFlippedX(false);
+		}
 		bulletPBody->setVelocity(Vec2(175.0f, 0.0f));
 	}
 }
-
 
 
 
