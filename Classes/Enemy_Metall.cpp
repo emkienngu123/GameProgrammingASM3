@@ -415,10 +415,13 @@ void Enemy_Metall::die()
 		// START: ADD COIN SPAWNING CODE HERE
 		// =================================================================
 
-	auto coin = Sprite::create("HelloWorld.png"); // <-- PROVIDE YOUR IMAGE PATH
-	coin->setPosition(metallPos.x, metallPos.y - 8.5f);
+	auto coin = Sprite::create("Megaman/Drops/star.png"); // <-- PROVIDE YOUR IMAGE PATH
+	coin->setPosition(metallPos.x, metallPos.y);
 
-	auto coinBody = PhysicsBody::createCircle(coin->getContentSize().width / 2);
+	// Define a material: (density, restitution/bounciness, friction)
+	auto coinMaterial = PhysicsMaterial(1.0f, 0.3f, 0.9f); // 0.8f is high friction
+
+	auto coinBody = PhysicsBody::createBox(coin->getContentSize(), coinMaterial);
 	coinBody->setGravityEnable(true);
 	coinBody->setVelocity(Vec2(cocos2d::random(-20.0f, 20.0f), 75.0f));
 

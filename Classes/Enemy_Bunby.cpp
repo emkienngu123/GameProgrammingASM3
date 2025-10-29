@@ -289,6 +289,29 @@ void Enemy_Bunby::die()
 	explosion_1->runAction(seq_body);
 	explosion_2->runAction(seq_head);
 
+	auto potion = Sprite::create("Megaman/Drops/health.png"); // <-- PROVIDE YOUR IMAGE PATH
+	potion->setPosition(bunbyBodyPos.x, bunbyBodyPos.y);
+
+	// Use the same material for bounciness and friction
+	auto potionMaterial = PhysicsMaterial(1.0f, 0.3f, 0.9f);
+
+	auto potionBody = PhysicsBody::createBox(potion->getContentSize(), potionMaterial);
+	potionBody->setGravityEnable(true);
+
+	// Give it a slightly different velocity from the coin so they separate
+	potionBody->setVelocity(Vec2(cocos2d::random(-40.0f, 40.0f), 85.0f));
+
+	potionBody->setCategoryBitmask(Utils::CreateMask(core::CategoryBits::HEALTH_POTION));
+	potionBody->setCollisionBitmask(Utils::CreateMask(core::CategoryBits::PLATFORM));
+	potionBody->setContactTestBitmask(Utils::CreateMask(core::CategoryBits::PLAYER));
+	potionBody->setTag(core::TagIndex::HEALTH_POTION);
+
+	potion->setPhysicsBody(potionBody);
+	sceneLayer->addChild(potion, 2);
+
+
+
+
 	soundManager->StopEnemyEffect();
 
 	sceneLayer->addChild(explosion_1);

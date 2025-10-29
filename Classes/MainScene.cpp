@@ -100,7 +100,7 @@ bool MainScene::init()
 
 		backCollider->setCollisionBitmask(Utils::CreateMask(core::CategoryBits::PLAYER					// ¹°¸® Ãæµ¹
 			, core::CategoryBits::ENEMY
-			, core::CategoryBits::ENEMY_PROJECTILE));
+			, core::CategoryBits::ENEMY_PROJECTILE , core::CategoryBits::COIN , core::CategoryBits::HEALTH_POTION));
 
 		backCollider->setContactTestBitmask(Utils::CreateMask(core::CategoryBits::PLAYER_PROJECTILE
 			, core::CategoryBits::ENEMY_PROJECTILE));  // ÄÝ¸®Àü ÀÌº¥Æ®
@@ -284,7 +284,7 @@ bool MainScene::init()
 	characterBody->setContactTestBitmask(Utils::CreateMask(core::CategoryBits::ENEMY
 														, core::CategoryBits::ENEMY_PROJECTILE
 														, core::CategoryBits::ENEMY_AWAKE_SENSOR
-														, core::CategoryBits::TRIGGER_POINT));
+														, core::CategoryBits::TRIGGER_POINT , core::CategoryBits::COIN , core::CategoryBits::HEALTH_POTION));
 	
 	characterBody->setTag(core::TagIndex::PLAYER);
 	characterBody->setGravityEnable(false);
@@ -766,6 +766,45 @@ bool MainScene::init()
 		}
 		// =================================================================
 		// END: ADD COIN COLLECTION LOGIC
+		// =================================================================
+
+
+// =================================================================
+		// START: ADD HEALTH POTION COLLECTION LOGIC
+		// =================================================================
+		if (nodeA == core::TagIndex::PLAYER && nodeB == core::TagIndex::HEALTH_POTION)
+		{
+			if (contact.getShapeB()->getBody()->getNode() != nullptr) {
+				contact.getShapeB()->getBody()->getNode()->removeFromParentAndCleanup(true);
+
+				// --- HEAL THE PLAYER ---
+				this->playerHealth += 8.0f; // Heal 8 HP (you can change this value)
+				if (this->playerHealth > 28.0f) { // Cap at max health
+					this->playerHealth = 28.0f;
+				}
+				// TODO: Play a "heal" sound effect
+				// soundManager->PlayEffect(soundManager->healSoundPath);
+			}
+			return false; // No physical collision
+		}
+
+		if (nodeB == core::TagIndex::PLAYER && nodeA == core::TagIndex::HEALTH_POTION)
+		{
+			if (contact.getShapeA()->getBody()->getNode() != nullptr) {
+				contact.getShapeA()->getBody()->getNode()->removeFromParentAndCleanup(true);
+
+				// --- HEAL THE PLAYER ---
+				this->playerHealth += 8.0f; // Heal 8 HP (you can change this value)
+				if (this->playerHealth > 28.0f) { // Cap at max health
+					this->playerHealth = 28.0f;
+				}
+				// TODO: Play a "heal" sound effect
+				// soundManager->PlayEffect(soundManager->healSoundPath);
+			}
+			return false; // No physical collision
+		}
+		// =================================================================
+		// END: ADD HEALTH POTION COLLECTION LOGIC
 		// =================================================================
 
 		if (nodeA == core::TagIndex::PLAYER
