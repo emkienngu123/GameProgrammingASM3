@@ -70,6 +70,11 @@ public:
 	std::unordered_map<size_t, cocos2d::Sprite*> _BladeBoundaryCollider;
 
 private:
+
+
+	int coinCount;
+
+
 	cocos2d::LayerColor* wlayer;
 
 	cocos2d::Sprite* EmptyHealthBar;

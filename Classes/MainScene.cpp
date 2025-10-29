@@ -23,6 +23,7 @@ bool MainScene::init()
 
 
 	// Health Bar Initializing
+	coinCount = 0;
 	playerHealth = 28.0f; // Default : 28
 
 	EmptyHealthBar = Sprite::create("Megaman/UI/HealthBar_Empty.png");
@@ -750,6 +751,7 @@ bool MainScene::init()
 
 				// TODO: Add score, play sound effect
 				// log("COIN COLLECTED!");
+				this->coinCount++;
 				soundManager->PlayTinkEffect(soundManager->coinPickUp);
 			}
 			return false; // No physical collision
@@ -762,7 +764,7 @@ bool MainScene::init()
 
 				// TODO: Add score, play sound effect
 				// log("COIN COLLECTED!");
-
+				this->coinCount++;
 				soundManager->PlayTinkEffect(soundManager->coinPickUp);
 			}
 			return false; // No physical collision
@@ -2161,7 +2163,7 @@ void MainScene::setTeleportVelocity()
 
 void MainScene::replaceEndScene()
 {
-	_director->replaceScene(TransitionFade::create(2.0f, ReplaceEndSceneHelper::createScene()));
+	_director->replaceScene(TransitionFade::create(2.0f, ReplaceEndSceneHelper::createScene(this->coinCount)));
 }
 
 //void MainScene::createBullet(_bullets state)

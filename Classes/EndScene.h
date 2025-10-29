@@ -1,15 +1,23 @@
 #pragma once
 #include "cocos2d.h"
 
-class EndScene : public cocos2d::Scene {
+class EndScene : public cocos2d::Scene
+{
 public:
-	static cocos2d::Scene* createScene();
-	virtual bool init();
+    // 1. Modified createScene to accept the coin count.
+    static cocos2d::Scene* createScene(int coins);
 
-	CREATE_FUNC(EndScene);
+    // 2. A new create function
+    static EndScene* create(int coins);
 
-	
+    // 3. A new init method that receives the coin count.
+    virtual bool initWithCoins(int coins);
 
-	cocos2d::Sprite* titleSprite;
-	cocos2d::Sprite* animationSprite;
+private:
+    int finalCoinCount;
+    cocos2d::Sprite* titleSprite;
+    cocos2d::Sprite* animationSprite;
+
+    // 4. A helper function to draw the stars.
+    void renderStars();
 };
