@@ -693,6 +693,8 @@ bool MainScene::init()
 				bulletParticleAnimState(COMMON_BULLET, world.x, world.y);
 			}
 		}
+
+
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////	
 
 		if (nodeA == core::TagIndex::AWAKE_SENSOR) {
@@ -736,6 +738,35 @@ bool MainScene::init()
 				break;
 			}
 		}
+
+		// =================================================================
+				// START: ADD COIN COLLECTION LOGIC (add it here)
+				// =================================================================
+
+		if (nodeA == core::TagIndex::PLAYER && nodeB == core::TagIndex::COIN)
+		{
+			if (contact.getShapeB()->getBody()->getNode() != nullptr) {
+				contact.getShapeB()->getBody()->getNode()->removeFromParentAndCleanup(true);
+
+				// TODO: Add score, play sound effect
+				// log("COIN COLLECTED!");
+			}
+			return false; // No physical collision
+		}
+
+		if (nodeB == core::TagIndex::PLAYER && nodeA == core::TagIndex::COIN)
+		{
+			if (contact.getShapeA()->getBody()->getNode() != nullptr) {
+				contact.getShapeA()->getBody()->getNode()->removeFromParentAndCleanup(true);
+
+				// TODO: Add score, play sound effect
+				// log("COIN COLLECTED!");
+			}
+			return false; // No physical collision
+		}
+		// =================================================================
+		// END: ADD COIN COLLECTION LOGIC
+		// =================================================================
 
 		if (nodeA == core::TagIndex::PLAYER
 			&& (nodeB == core::TagIndex::METALL || nodeB == core::TagIndex::METALL_BULLET || nodeB == core::TagIndex::BUNBY_HEAD || nodeB == core::TagIndex::BUNBY_TANK || nodeB == core::TagIndex::BOSS || nodeB == core::TagIndex::BOSS_SHIELD || nodeB == core::TagIndex::BOSS_BLADE))

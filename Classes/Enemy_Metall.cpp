@@ -411,6 +411,31 @@ void Enemy_Metall::die()
 	auto metallPos = sceneLayer->convertToNodeSpace(this->metallBody->getPosition());
 	explosion->setPosition(metallPos.x, metallPos.y - 8.5f);
 
+	// =================================================================
+		// START: ADD COIN SPAWNING CODE HERE
+		// =================================================================
+
+	auto coin = Sprite::create("HelloWorld.png"); // <-- PROVIDE YOUR IMAGE PATH
+	coin->setPosition(metallPos.x, metallPos.y - 8.5f);
+
+	auto coinBody = PhysicsBody::createCircle(coin->getContentSize().width / 2);
+	coinBody->setGravityEnable(true);
+	coinBody->setVelocity(Vec2(cocos2d::random(-20.0f, 20.0f), 75.0f));
+
+	coinBody->setCategoryBitmask(Utils::CreateMask(core::CategoryBits::COIN));
+	coinBody->setCollisionBitmask(Utils::CreateMask(core::CategoryBits::PLATFORM));
+	coinBody->setContactTestBitmask(Utils::CreateMask(core::CategoryBits::PLAYER));
+
+	// Set the tag using your enum
+	coinBody->setTag(core::TagIndex::COIN);
+
+	coin->setPhysicsBody(coinBody);
+	sceneLayer->addChild(coin, 2);
+
+	// =================================================================
+	// END: ADD COIN SPAWNING CODE
+	// =================================================================
+
 	soundManager->StopEnemyEffect();
 
 	explosion->runAction(seq);

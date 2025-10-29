@@ -37,7 +37,7 @@ namespace core {
         BOSS_MOVE_POINT = 18,
         BLADE_BOUNDARY = 19,
 
-        COUNT
+        COIN = 20
     };
 
     enum EnemyDamage : int {
@@ -60,6 +60,7 @@ namespace core {
         TRIGGER_POINT = 0x0100,
         BOSS_MOVE_POINT = 0x0200,
         DEADEND = 0x0400,
-        BLADE_BOUNDARY = 0x0800
+        BLADE_BOUNDARY = 0x0800,
+        COIN = 0x1000
     };
 }
