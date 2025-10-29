@@ -1980,7 +1980,7 @@ void MainScene::playTeleportSound()
 
 void MainScene::playerDie()
 {
-	int allSheetNum = 2;
+	int allSheetNum = 3;
 	std::string sPath = "Megaman/Particle/Particle_Explosion.plist";
 	std::string sName = "explosion_";
 	float frameDelay = 0.07f;
@@ -2127,9 +2127,8 @@ void MainScene::replaceEndScene()
 //
 //	}
 //
-//	// ÅºÈ¯ »ý¼º
+//	// 탄환 생성
 //	auto pBullet = new Sprite();
-//	Sprite* pBulletVisual = nullptr;
 //	auto bulletPBody = PhysicsBody::createBox(size, PHYSICSBODY_MATERIAL_DEFAULT);
 //	bulletPBody->setGravityEnable(false);
 //
@@ -2137,61 +2136,42 @@ void MainScene::replaceEndScene()
 //		pBullet = Sprite::create(sPath);
 //		pBullet->setPosition(shootPosition);
 //		bulletPBody->setTag(core::TagIndex::COMMON_BULLET);
-//		/*bulletPBody = PhysicsBody::createBox(size, PHYSICSBODY_MATERIAL_DEFAULT);
-//		bulletPBody->setGravityEnable(false);
-//		bulletPBody->setCategoryBitmask(3);
-//		bulletPBody->setContactTestBitmask(1 || 4);
-//		bulletPBody->setCollisionBitmask(1);
-//		bulletPBody->setGroup(-1);
-//		bulletPBody->setTag(10);
-//		pBullet->setPhysicsBody(bulletPBody);*/
 //		soundManager->PlayAttackEffect(soundManager->bulletPath);
 //	}
 //
 //	else if (state == CHARGE_X1 || state == CHARGE_X2) {
-//		// ¿ÜºÎ ÇÁ·Î±×·¥À» »ç¿ëÇÏ¿© ¸¸µç plist ÆÄÀÏ ºÒ·¯¿À±â
+//		// 외부 프로그램을 사용하여 만든 plist 파일 불러오기
 //		auto cache = SpriteFrameCache::getInstance();
 //		cache->addSpriteFramesWithFile(sPath);
 //
-//		// cocos2d::Vector
-//		//Vector<AnimationFrame*> animFrames;
 //		Vector<SpriteFrame*> animFrames;
-//		//ValueMap myValueMap;
 //
 //		for (int i = 0; i < allSheetNum; i++) {
 //
-//			// StringUtils::format => ÁöÁ¤ÇÑ Çü½ÄÀ¸·Î ¹®ÀÚ¿­À» »ý¼º
+//			// StringUtils::format => 지정한 형식으로 문자열을 생성
 //			std::string _frames = StringUtils::format("%s%02d.png", sName.c_str(), i);
 //			//myValueMap.insert(std::pair<std::string, Value>("position", ValueVector(Value(1.0f), Value(2.0f))));
 //
-//			// »ý¼ºÇÑ ¹®ÀÚ¿­À» ÀÌ¿ëÇÏ¿© plist ³»ºÎÀÇ SpriteFrame Á¤º¸¸¦ °¡Á®¿È
+//			// 생성한 문자열을 이용하여 plist 내부의 SpriteFrame 정보를 가져옴
 //			SpriteFrame* frame = cache->getSpriteFrameByName(_frames);
 //			//frame->setAnchorPoint(Vec2(0.0f, 0.0f));
 //			frame->getTexture()->setAliasTexParameters();
-//			// ¼±º°ÇÑ SpriteFrameÀ» »ðÀÔ
+//			// 선별한 SpriteFrame을 삽입
 //			//animFrames.pushBack(AnimationFrame::create(cache->getSpriteFrameByName(_frames), 1, myValueMap));
 //			animFrames.pushBack(frame);
 //		}
 //
-//		// plist ±â¹ÝÀ¸·Î ¸¸µç SpriteFrame Á¤º¸¸¦ È°¿ëÇÏ¿© ÀÎ½ºÅÏ½º »ý¼º
+//		// plist 기반으로 만든 SpriteFrame 정보를 활용하여 인스턴스 생성
 //		auto Animation = Animation::createWithSpriteFrames(animFrames, frameDelay);
 //		//auto atkAnimation = Animation::createWithSpriteFrames(animFrames, frameDelay);
 //		auto bulletAnim = Animate::create(Animation);
 //		bulletAnim->retain();
 //
 //
-//		pBulletVisual = Sprite::create();
-//		pBulletVisual->runAction(RepeatForever::create(bulletAnim));
-//		pBulletVisual->setAnchorPoint(Vec2(0.5f, 0.5f));
 //
-//
-//		pBullet = Sprite::create();
-//		pBullet->setContentSize(size);
-//		pBullet->setAnchorPoint(Vec2(0.5f, 0.5f));
+//		pBullet = Sprite::create("Placeholder.png");
 //		pBullet->setPosition(shootPosition);
 //
-//		pBulletVisual->setPosition(Vec2(size.width * 0.5f, size.height * 0.5f));
-//		pBullet->addChild(pBulletVisual);
 //		if (state == CHARGE_X1) {
 //			bulletPBody->setTag(core::TagIndex::CHARGE_X1);
 //			soundManager->PlayAttackEffect(soundManager->chargeX1Path);
@@ -2202,16 +2182,7 @@ void MainScene::replaceEndScene()
 //			soundManager->PlayAttackEffect(soundManager->chargeX2Path);
 //		}
 //
-//		/*bulletPBody = PhysicsBody::createBox(size, PHYSICSBODY_MATERIAL_DEFAULT);
-//		bulletPBody->setGravityEnable(false);
-//		bulletPBody->setCategoryBitmask(3);
-//		bulletPBody->setContactTestBitmask(1 || 2 || 3);
-//		bulletPBody->setGroup(-1);
-//		bulletPBody->setCollisionBitmask(1);
-//		bulletPBody->setTag(10);
-//
-//		pBullet->setPhysicsBody(bulletPBody);*/
-//		//pBullet->runAction(bulletAnim);
+//		pBullet->runAction(bulletAnim);
 //	}
 //
 //	bulletPBody->setCategoryBitmask(Utils::CreateMask(core::CategoryBits::PLAYER_PROJECTILE));
@@ -2222,37 +2193,16 @@ void MainScene::replaceEndScene()
 //
 //	pBullet->setPhysicsBody(bulletPBody);
 //
-//	//bulletSprite->setPosition(shootPosition);
+//	wlayer->addChild(pBullet);
 //
-//	/*auto callback = CallFunc::create([&]() {
-//			bulletSprite->setVisible(false);
-//			bulletSprite->removeAllChildrenWithCleanup(true);
-//		});
-//	auto seq = Sequence::create(fireParticle, callback, nullptr);
-//	bulletSprite->runAction(seq);
-//	this->addChild(bulletSprite);*/
-//
-//	this->addChild(pBullet);
+//	// 액션 적용
 //	if (character->isFlippedX()) {
-//		// If pBulletVisual exists, it's a charge bullet. Flip the visual child.
-//		if (pBulletVisual != nullptr) {
-//			pBulletVisual->setFlippedX(true);
-//		}
-//		// Otherwise, it's a common bullet. Flip the main sprite.
-//		else {
-//			pBullet->setFlippedX(true);
-//		}
+//		pBullet->setFlippedX(true);
 //		bulletPBody->setVelocity(Vec2(-175.0f, 0.0f));
 //	}
+//
 //	else {
-//		// If pBulletVisual exists, it's a charge bullet.
-//		if (pBulletVisual != nullptr) {
-//			pBulletVisual->setFlippedX(false);
-//		}
-//		// Otherwise, it's a common bullet.
-//		else {
-//			pBullet->setFlippedX(false);
-//		}
+//		pBullet->setFlippedX(false);
 //		bulletPBody->setVelocity(Vec2(175.0f, 0.0f));
 //	}
 //}
@@ -2292,88 +2242,73 @@ void MainScene::createBullet(_bullets state)
 		size = Size(33.0f, 27.0f);
 
 		break;
-
 	}
 
-	// 탄환 생성
-	auto pBullet = new Sprite();
+	// 1. Create a "root" node that will hold the physics body
+	auto pBulletNode = Node::create();
+	pBulletNode->setPosition(shootPosition); // Set the initial position on the root node
+
+	// 2. Create the physics body
 	auto bulletPBody = PhysicsBody::createBox(size, PHYSICSBODY_MATERIAL_DEFAULT);
 	bulletPBody->setGravityEnable(false);
 
+	// 3. Create the "visual" sprite
+	Sprite* pBulletSprite = nullptr; // Initialize a sprite pointer
+
 	if (state == COMMON_BULLET) {
-		pBullet = Sprite::create(sPath);
-		pBullet->setPosition(shootPosition);
+		pBulletSprite = Sprite::create(sPath); // Create the visual sprite
 		bulletPBody->setTag(core::TagIndex::COMMON_BULLET);
 		soundManager->PlayAttackEffect(soundManager->bulletPath);
 	}
-
 	else if (state == CHARGE_X1 || state == CHARGE_X2) {
-		// 외부 프로그램을 사용하여 만든 plist 파일 불러오기
+		// (Your animation loading code is correct)
 		auto cache = SpriteFrameCache::getInstance();
 		cache->addSpriteFramesWithFile(sPath);
-
 		Vector<SpriteFrame*> animFrames;
-
 		for (int i = 0; i < allSheetNum; i++) {
-
-			// StringUtils::format => 지정한 형식으로 문자열을 생성
 			std::string _frames = StringUtils::format("%s%02d.png", sName.c_str(), i);
-			//myValueMap.insert(std::pair<std::string, Value>("position", ValueVector(Value(1.0f), Value(2.0f))));
-
-			// 생성한 문자열을 이용하여 plist 내부의 SpriteFrame 정보를 가져옴
 			SpriteFrame* frame = cache->getSpriteFrameByName(_frames);
-			//frame->setAnchorPoint(Vec2(0.0f, 0.0f));
 			frame->getTexture()->setAliasTexParameters();
-			// 선별한 SpriteFrame을 삽입
-			//animFrames.pushBack(AnimationFrame::create(cache->getSpriteFrameByName(_frames), 1, myValueMap));
 			animFrames.pushBack(frame);
 		}
-
-		// plist 기반으로 만든 SpriteFrame 정보를 활용하여 인스턴스 생성
 		auto Animation = Animation::createWithSpriteFrames(animFrames, frameDelay);
-		//auto atkAnimation = Animation::createWithSpriteFrames(animFrames, frameDelay);
 		auto bulletAnim = Animate::create(Animation);
 		bulletAnim->retain();
 
-
-
-		pBullet = Sprite::create("Placeholder.png");
-		pBullet->setPosition(shootPosition);
+		pBulletSprite = Sprite::create("Placeholder.png"); // Create the visual sprite
+		pBulletSprite->runAction(bulletAnim); // Run the animation on the visual sprite
 
 		if (state == CHARGE_X1) {
 			bulletPBody->setTag(core::TagIndex::CHARGE_X1);
 			soundManager->PlayAttackEffect(soundManager->chargeX1Path);
 		}
-
 		else if (state == CHARGE_X2) {
 			bulletPBody->setTag(core::TagIndex::CHARGE_X2);
 			soundManager->PlayAttackEffect(soundManager->chargeX2Path);
 		}
-
-		pBullet->runAction(bulletAnim);
 	}
 
+	// 4. Setup physics body
 	bulletPBody->setCategoryBitmask(Utils::CreateMask(core::CategoryBits::PLAYER_PROJECTILE));
 	bulletPBody->setCollisionBitmask(0);
 	bulletPBody->setContactTestBitmask(Utils::CreateMask(core::CategoryBits::BOUNDARY
 		//, core::CategoryBits::PLATFORM
 		, core::CategoryBits::ENEMY));
 
-	pBullet->setPhysicsBody(bulletPBody);
+	// 5. Attach physics to the ROOT node, and the visual sprite as a CHILD
+	pBulletNode->setPhysicsBody(bulletPBody);
+	pBulletNode->addChild(pBulletSprite);
 
-	wlayer->addChild(pBullet);
+	// 6. Add the ROOT node to the layer
+	wlayer->addChild(pBulletNode);
 
-	// 액션 적용
+	// 7. Apply velocity to the physics body, but flip the VISUAL sprite
 	if (character->isFlippedX()) {
-		pBullet->setFlippedX(true);
-		bulletPBody->setVelocity(Vec2(-175.0f, 0.0f));
+		pBulletSprite->setFlippedX(true); // Flip the visual
+		bulletPBody->setVelocity(Vec2(-175.0f, 0.0f)); // Move the physics body
 	}
-
 	else {
-		pBullet->setFlippedX(false);
-		bulletPBody->setVelocity(Vec2(175.0f, 0.0f));
+		pBulletSprite->setFlippedX(false); // Flip the visual
+		bulletPBody->setVelocity(Vec2(175.0f, 0.0f)); // Move the physics body
 	}
 }
-
-
-

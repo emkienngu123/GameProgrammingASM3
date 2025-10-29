@@ -11,11 +11,11 @@
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{36,48}</string>
+                <string>{13,13}</string>
                 <key>spriteSourceSize</key>
-                <string>{36,48}</string>
+                <string>{13,13}</string>
                 <key>textureRect</key>
-                <string>{{1,1},{36,48}}</string>
+                <string>{{1,42},{13,13}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -26,11 +26,26 @@
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{36,48}</string>
+                <string>{19,15}</string>
                 <key>spriteSourceSize</key>
-                <string>{36,48}</string>
+                <string>{19,15}</string>
                 <key>textureRect</key>
-                <string>{{39,1},{36,48}}</string>
+                <string>{{1,25},{19,15}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>explosion_02.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{22,22}</string>
+                <key>spriteSourceSize</key>
+                <string>{22,22}</string>
+                <key>textureRect</key>
+                <string>{{1,1},{22,22}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -46,9 +61,9 @@
             <key>realTextureFileName</key>
             <string>Particle_Explosion.png</string>
             <key>size</key>
-            <string>{76,50}</string>
+            <string>{24,56}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:0fa81a226fc1a539d38588c0567c247a:6cc08987aca94fbc30644408abb15236:b9011b9043df98c1bc82958dbef4ad30$</string>
+            <string>$TexturePacker:SmartUpdate:bdac2360ec5620cd85b97d564b264a48:4769ff5520cfc41bb6f07d9f68e09cc9:b9011b9043df98c1bc82958dbef4ad30$</string>
             <key>textureFileName</key>
             <string>Particle_Explosion.png</string>
         </dict>
