@@ -11,13 +11,13 @@
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{20,23}</string>
+                <string>{22,24}</string>
                 <key>spriteSourceSize</key>
-                <string>{20,23}</string>
+                <string>{22,24}</string>
                 <key>textureRect</key>
-                <string>{{200,1},{20,23}}</string>
+                <string>{{28,77},{22,24}}</string>
                 <key>textureRotated</key>
-                <false/>
+                <true/>
             </dict>
             <key>metall_attack_01.png</key>
             <dict>
@@ -26,13 +26,13 @@
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{22,24}</string>
+                <string>{23,24}</string>
                 <key>spriteSourceSize</key>
-                <string>{22,24}</string>
+                <string>{23,24}</string>
                 <key>textureRect</key>
-                <string>{{176,1},{22,24}}</string>
+                <string>{{30,28},{23,24}}</string>
                 <key>textureRotated</key>
-                <false/>
+                <true/>
             </dict>
             <key>metall_attack_02.png</key>
             <dict>
@@ -41,13 +41,13 @@
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{23,24}</string>
+                <string>{22,25}</string>
                 <key>spriteSourceSize</key>
-                <string>{23,24}</string>
+                <string>{22,25}</string>
                 <key>textureRect</key>
-                <string>{{151,1},{23,24}}</string>
+                <string>{{28,53},{22,25}}</string>
                 <key>textureRotated</key>
-                <false/>
+                <true/>
             </dict>
             <key>metall_attack_03.png</key>
             <dict>
@@ -56,13 +56,13 @@
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{22,25}</string>
+                <string>{21,25}</string>
                 <key>spriteSourceSize</key>
-                <string>{22,25}</string>
+                <string>{21,25}</string>
                 <key>textureRect</key>
-                <string>{{104,1},{22,25}}</string>
+                <string>{{1,78},{21,25}}</string>
                 <key>textureRotated</key>
-                <false/>
+                <true/>
             </dict>
             <key>metall_attack_04.png</key>
             <dict>
@@ -71,11 +71,11 @@
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{21,25}</string>
+                <string>{24,25}</string>
                 <key>spriteSourceSize</key>
-                <string>{21,25}</string>
+                <string>{24,25}</string>
                 <key>textureRect</key>
-                <string>{{128,1},{21,25}}</string>
+                <string>{{30,1},{24,25}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -86,13 +86,13 @@
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{24,25}</string>
+                <string>{20,26}</string>
                 <key>spriteSourceSize</key>
-                <string>{24,25}</string>
+                <string>{20,26}</string>
                 <key>textureRect</key>
-                <string>{{78,1},{24,25}}</string>
+                <string>{{1,29},{20,26}}</string>
                 <key>textureRotated</key>
-                <false/>
+                <true/>
             </dict>
             <key>metall_attack_06.png</key>
             <dict>
@@ -101,30 +101,15 @@
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{20,26}</string>
+                <string>{25,25}</string>
                 <key>spriteSourceSize</key>
-                <string>{20,26}</string>
+                <string>{25,25}</string>
                 <key>textureRect</key>
-                <string>{{29,1},{20,26}}</string>
+                <string>{{1,51},{25,25}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
             <key>metall_attack_07.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{25,25}</string>
-                <key>spriteSourceSize</key>
-                <string>{25,25}</string>
-                <key>textureRect</key>
-                <string>{{51,1},{25,25}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>metall_attack_08.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -137,7 +122,7 @@
                 <key>textureRect</key>
                 <string>{{1,1},{27,26}}</string>
                 <key>textureRotated</key>
-                <true/>
+                <false/>
             </dict>
         </dict>
         <key>metadata</key>
@@ -151,9 +136,9 @@
             <key>realTextureFileName</key>
             <string>Enemies_Metall_Attack.png</string>
             <key>size</key>
-            <string>{221,29}</string>
+            <string>{55,100}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:f86b74b2ee915da191ec166435e47288:0953a12078c8bf88b3f24fa9584de9f6:c9df78ac5a7a885c24c9751a21a2ce91$</string>
+            <string>$TexturePacker:SmartUpdate:a25132f14e32aacc1c55d66ac5ba5393:c2965b45f68e4a7075b56e4acd06e325:c9df78ac5a7a885c24c9751a21a2ce91$</string>
             <key>textureFileName</key>
             <string>Enemies_Metall_Attack.png</string>
         </dict>
