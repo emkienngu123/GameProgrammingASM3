@@ -29,6 +29,8 @@ public:
 
 	std::string metallBulletPath = "Megaman/SFX/Metall_Bullet.mp3";
 	std::string bossBladePath = "Megaman/SFX/boss_blade_loop.mp3";
+	std::string coinPickUp = "Megaman/SFX/points-ball.mp3";
+	std::string healthPotionPickUp = "Megaman/SFX/refill.mp3";
 
 	void initSoundManager(std::string& filePath);
 

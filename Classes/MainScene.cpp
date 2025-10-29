@@ -750,6 +750,7 @@ bool MainScene::init()
 
 				// TODO: Add score, play sound effect
 				// log("COIN COLLECTED!");
+				soundManager->PlayTinkEffect(soundManager->coinPickUp);
 			}
 			return false; // No physical collision
 		}
@@ -761,6 +762,8 @@ bool MainScene::init()
 
 				// TODO: Add score, play sound effect
 				// log("COIN COLLECTED!");
+
+				soundManager->PlayTinkEffect(soundManager->coinPickUp);
 			}
 			return false; // No physical collision
 		}
@@ -783,7 +786,7 @@ bool MainScene::init()
 					this->playerHealth = 28.0f;
 				}
 				// TODO: Play a "heal" sound effect
-				// soundManager->PlayEffect(soundManager->healSoundPath);
+				soundManager->PlayTinkEffect(soundManager->healthPotionPickUp);
 			}
 			return false; // No physical collision
 		}
@@ -799,7 +802,7 @@ bool MainScene::init()
 					this->playerHealth = 28.0f;
 				}
 				// TODO: Play a "heal" sound effect
-				// soundManager->PlayEffect(soundManager->healSoundPath);
+				soundManager->PlayTinkEffect(soundManager->healthPotionPickUp);
 			}
 			return false; // No physical collision
 		}

@@ -35,6 +35,9 @@ void SoundManager::initSoundManager(std::string& filePath)
 
 	AudioEngine::preload(metallBulletPath);
 	AudioEngine::preload(bossBladePath);
+
+	AudioEngine::preload(healthPotionPickUp);
+	AudioEngine::preload(coinPickUp);
 }
 
 void SoundManager::PreloadBGM(std::string& filePath)
